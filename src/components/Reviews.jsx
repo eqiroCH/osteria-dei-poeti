@@ -23,11 +23,6 @@ function Reviews() {
       <div className="reviews-bg"></div>
       
       <div className="container">
-        <div className="reviews-header">
-          <span className="section-label">Kundenstimmen</span>
-          <h2 className="section-title">Was unsere <span className="gold-accent">Gäste</span> sagen</h2>
-        </div>
-        
         <div className="elfsight-widget-container">
           <div className="elfsight-app-c6b7a741-9191-40bf-b7f5-7176f90d096c" data-elfsight-app-lazy></div>
         </div>

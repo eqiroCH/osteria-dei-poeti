@@ -25,14 +25,22 @@
 
 /* Elfsight Branding verstecken */
 .elfsight-widget-container a[href*="elfsight"],
+.elfsight-widget-container a[href*="elfsight.com"],
 .elfsight-widget-container [class*="eapps-link"],
 .elfsight-widget-container [class*="elfsight-app-branding"],
-.elfsight-widget-container [class*="eapps-widget-toolbar"] {
+.elfsight-widget-container [class*="eapps-widget-toolbar"],
+.elfsight-widget-container [class*="branding"],
+.elfsight-widget-container [class*="powered-by"],
+.elfsight-widget-container > div > div > div > a[target="_blank"] {
   display: none !important;
   visibility: hidden !important;
   opacity: 0 !important;
   height: 0 !important;
+  max-height: 0 !important;
   overflow: hidden !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  left: -9999px !important;
 }
 
 /* Carousel automatisch drehen lassen */
