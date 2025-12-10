@@ -23,8 +23,39 @@
   z-index: 1;
 }
 
-/* Elfsight Widget Title verstecken (wir haben unseren eigenen) */
-.elfsight-widget-container [class*="eapps-google-reviews-title"] {
+/* Elfsight Branding verstecken */
+.elfsight-widget-container a[href*="elfsight"],
+.elfsight-widget-container [class*="eapps-link"],
+.elfsight-widget-container [class*="elfsight-app-branding"],
+.elfsight-widget-container [class*="eapps-widget-toolbar"] {
   display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Carousel automatisch drehen lassen */
+.elfsight-widget-container [class*="carousel"],
+.elfsight-widget-container [class*="slider"] {
+  animation: none;
+}
+
+/* Widget besser an das Design anpassen */
+.elfsight-widget-container [class*="eapps-google-reviews"] {
+  font-family: inherit !important;
+}
+
+/* Review Cards Styling */
+.elfsight-widget-container [class*="review-card"],
+.elfsight-widget-container [class*="eapps-google-reviews-review"] {
+  border-color: rgba(201, 169, 98, 0.2) !important;
+  transition: all 0.3s ease !important;
+}
+
+.elfsight-widget-container [class*="review-card"]:hover,
+.elfsight-widget-container [class*="eapps-google-reviews-review"]:hover {
+  border-color: rgba(201, 169, 98, 0.5) !important;
+  transform: translateY(-3px) !important;
 }
 
