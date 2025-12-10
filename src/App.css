@@ -1,0 +1,33 @@
+/* App-specific styles */
+main {
+  position: relative;
+}
+
+/* Decorative Elements */
+.decorative-line {
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  margin: 2rem auto;
+}
+
+.decorative-flourish {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.decorative-flourish::before,
+.decorative-flourish::after {
+  content: '';
+  width: 60px;
+  height: 1px;
+  background: var(--color-gold);
+}
+
+.decorative-flourish span {
+  color: var(--color-gold);
+  font-size: 1.5rem;
+}

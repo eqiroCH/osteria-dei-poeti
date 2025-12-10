@@ -1,0 +1,129 @@
+.contact {
+  padding: var(--section-padding) 0;
+  background: var(--color-bg-section);
+  position: relative;
+}
+
+.contact-bg {
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(135deg, rgba(201, 169, 98, 0.02) 0%, transparent 50%),
+    linear-gradient(225deg, rgba(201, 169, 98, 0.02) 0%, transparent 50%);
+}
+
+.contact-content-centered {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--color-cream);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.contact-intro {
+  color: var(--color-text-muted);
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+.phone-cta {
+  margin-bottom: 3rem;
+}
+
+.phone-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 3rem;
+  background: var(--color-gold);
+  color: var(--color-bg-dark);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: all var(--transition-smooth);
+}
+
+.phone-button:hover {
+  background: var(--color-gold-light);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(201, 169, 98, 0.4);
+}
+
+.phone-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.info-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.info-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  background: var(--color-bg-dark);
+  border: 1px solid rgba(201, 169, 98, 0.15);
+  transition: all var(--transition-smooth);
+}
+
+.info-card:hover {
+  border-color: var(--color-gold);
+  transform: translateY(-5px);
+}
+
+.info-icon-svg {
+  width: 40px;
+  height: 40px;
+  color: var(--color-gold);
+}
+
+.info-content {
+  text-align: center;
+}
+
+.info-content h4 {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-gold);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.info-content p {
+  font-size: 1rem;
+  color: var(--color-text);
+  line-height: 1.7;
+}
+
+.map-container {
+  border: 1px solid rgba(201, 169, 98, 0.2);
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .info-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .phone-button {
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+  }
+}
+
