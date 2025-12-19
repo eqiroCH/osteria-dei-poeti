@@ -5,8 +5,8 @@ const menuData = {
   antipasti: [
     { name: 'Bruschetta', description: 'Geröstetes Brot mit frischen Tomaten, Knoblauch und Basilikum' },
     { name: 'Carpaccio', description: 'Hauchdünnes Rindfleisch mit Rucola und Parmesan' },
-    { name: 'Caprese', description: 'Mozzarella mit Tomaten und Basilikum' },
-    { name: 'Antipasto Misto', description: 'Gemischte italienische Vorspeisen' },
+    { name: 'Caprese', description: 'Mozzarella mit Tomaten und Basilikum', vegetarian: true },
+    { name: 'Antipasto Misto', description: 'Gemischte italienische Vorspeisen', special: true },
   ],
   pasta: [
     { name: 'Tagliatelle', description: 'Frische Bandnudeln mit verschiedenen Saucen', special: true },
@@ -16,14 +16,14 @@ const menuData = {
     { name: 'Gnocchi', description: 'Hausgemachte Gnocchi', vegetarian: true },
   ],
   pizza: [
-    { name: 'Margherita', description: 'Tomaten, Mozzarella, Basilikum', special: true },
+    { name: 'Margherita', description: 'Tomaten, Mozzarella, Basilikum', vegetarian: true, special: true },
     { name: 'Prosciutto', description: 'Tomaten, Mozzarella, Schinken' },
     { name: 'Funghi', description: 'Tomaten, Mozzarella, Champignons', vegetarian: true },
     { name: 'Quattro Stagioni', description: 'Tomaten, Mozzarella, Artischocken, Pilze, Schinken, Oliven' },
     { name: 'Diavola', description: 'Tomaten, Mozzarella, scharfe Salami' },
   ],
   dolci: [
-    { name: 'Tiramisù', description: 'Hausgemachtes Tiramisù nach Originalrezept' },
+    { name: 'Tiramisu', description: 'Hausgemachtes Tiramisu nach Originalrezept', special: true },
     { name: 'Panna Cotta', description: 'Vanille-Panna Cotta mit Beerensauce' },
     { name: 'Gelato', description: 'Hausgemachtes italienisches Eis' },
     { name: 'Affogato', description: 'Vanilleeis mit heißem Espresso' },
@@ -31,10 +31,10 @@ const menuData = {
 }
 
 const categories = [
-  { id: 'antipasti', label: 'Antipasti' },
-  { id: 'pasta', label: 'Pasta & Risotto' },
-  { id: 'pizza', label: 'Pizza' },
-  { id: 'dolci', label: 'Dolci' },
+  { id: 'antipasti', label: 'Antipasti', icon: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z' },
+  { id: 'pasta', label: 'Pasta', icon: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z' },
+  { id: 'pizza', label: 'Pizza', icon: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z' },
+  { id: 'dolci', label: 'Dolci', icon: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z' },
 ]
 
 function Menu() {
@@ -45,56 +45,64 @@ function Menu() {
       <div className="menu-bg-pattern"></div>
       
       <div className="container">
+        {/* Header */}
         <div className="menu-header">
           <span className="section-label">Kulinarische Genüsse</span>
-          <h2 className="section-title">Unsere <span className="gold-accent">Speisekarte</span></h2>
+          <h2 className="section-title">
+            Unsere <span className="gold-accent">Speisekarte</span>
+          </h2>
           <p className="section-subtitle">Entdecken Sie die Vielfalt der italienischen Küche</p>
         </div>
         
+        {/* Category Tabs */}
         <div className="menu-categories">
           {categories.map((cat) => (
             <button
               key={cat.id}
-              className={`category-btn ${activeCategory === cat.id ? 'active' : ''}`}
+              className={`category-tab ${activeCategory === cat.id ? 'active' : ''}`}
               onClick={() => setActiveCategory(cat.id)}
             >
-              <span className="cat-label">{cat.label}</span>
+              <span className="tab-label">{cat.label}</span>
+              <span className="tab-underline"></span>
             </button>
           ))}
         </div>
         
-        <div className="menu-items">
+        {/* Menu Items */}
+        <div className="menu-items-grid">
           {menuData[activeCategory].map((item, index) => (
-            <div 
+            <article 
               key={item.name} 
-              className={`menu-item ${item.special ? 'special' : ''}`}
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className={`menu-card ${item.special ? 'featured' : ''}`}
+              style={{ animationDelay: `${index * 0.08}s` }}
             >
-              <div className="item-header">
-                <h3 className="item-name">
-                  {item.name}
-                  {item.special && <span className="badge special-badge">Empfehlung</span>}
-                  {item.vegetarian && <span className="badge veg-badge">Vegetarisch</span>}
-                </h3>
+              <div className="card-content">
+                <div className="card-header">
+                  <h3 className="item-name">{item.name}</h3>
+                  <div className="item-badges">
+                    {item.special && (
+                      <span className="badge badge-special">Empfehlung</span>
+                    )}
+                    {item.vegetarian && (
+                      <span className="badge badge-veg">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.7c.36-.05.73-.07 1.09-.07C13 19.23 19 14 20.5 8c0 0-3 0-3.5 0z"/>
+                        </svg>
+                        Vegetarisch
+                      </span>
+                    )}
+                  </div>
+                </div>
+                <p className="item-description">{item.description}</p>
               </div>
-              <p className="item-description">{item.description}</p>
-              <div className="item-line"></div>
-            </div>
+              <div className="card-accent"></div>
+            </article>
           ))}
         </div>
         
-        <div className="menu-footer">
-          <p className="menu-note">
-            Fragen Sie nach unseren Tagesempfehlungen und der vollständigen Speisekarte
-          </p>
-          <a href="tel:+41447670501" className="btn btn-primary">
-            Jetzt anrufen: 044 767 05 01
-          </a>
-        </div>
       </div>
     </section>
   )
 }
 
 export default Menu
-

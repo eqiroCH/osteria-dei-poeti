@@ -1,28 +1,45 @@
 :root {
   /* Color Palette - Warm Italian Tones */
-  --color-bg-dark: #0f0f0f;
-  --color-bg-section: #1a1a1a;
-  --color-bg-card: #242424;
-  --color-gold: #c9a962;
-  --color-gold-light: #e0c88a;
-  --color-gold-dark: #a68b4a;
+  --color-bg-dark: #0a0a0a;
+  --color-bg-section: #111111;
+  --color-bg-card: #1a1a1a;
+  --color-gold: #d4a853;
+  --color-gold-light: #e8c478;
+  --color-gold-dark: #b8923f;
   --color-terracotta: #c67b5c;
-  --color-olive: #8b9a6d;
-  --color-cream: #f5f0e6;
-  --color-text: #e8e8e8;
-  --color-text-muted: #9a9a9a;
+  --color-wine: #8b2635;
+  --color-olive: #6b7f4a;
+  --color-cream: #f8f5f0;
+  --color-text: #e5e5e5;
+  --color-text-muted: #888888;
   --color-text-dark: #1a1a1a;
   
   /* Typography */
+  --font-display: 'Playfair Display', Georgia, serif;
   --font-serif: 'Cormorant Garamond', Georgia, serif;
-  --font-sans: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   
   /* Spacing */
-  --section-padding: clamp(4rem, 10vw, 8rem);
-  --container-max: 1200px;
+  --section-padding: clamp(5rem, 12vw, 10rem);
+  --container-max: 1280px;
+  --container-narrow: 960px;
   
   /* Transitions */
+  --transition-fast: 0.2s ease;
   --transition-smooth: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.25);
+  --shadow-gold: 0 8px 32px rgba(212, 168, 83, 0.25);
+  
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
 }
 
 * {
@@ -33,31 +50,36 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
   font-family: var(--font-sans);
   background-color: var(--color-bg-dark);
   color: var(--color-text);
-  line-height: 1.6;
+  line-height: 1.7;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-weight: 500;
   line-height: 1.2;
+  letter-spacing: -0.01em;
 }
 
 a {
   text-decoration: none;
   color: inherit;
-  transition: color var(--transition-smooth);
+  transition: color var(--transition-fast);
 }
 
 img {
   max-width: 100%;
   height: auto;
+  display: block;
 }
 
 button {
@@ -69,29 +91,95 @@ button {
 
 /* Utility Classes */
 .container {
+  width: 100%;
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+}
+
+.container-narrow {
+  max-width: var(--container-narrow);
+}
+
+.section-label {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 1rem;
 }
 
 .section-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
   color: var(--color-cream);
-  margin-bottom: 0.5rem;
-  text-align: center;
+  margin-bottom: 0.75rem;
 }
 
 .section-subtitle {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
   color: var(--color-gold);
-  text-align: center;
   margin-bottom: 3rem;
 }
 
 .gold-accent {
   color: var(--color-gold);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-smooth);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
+  color: var(--color-bg-dark);
+  box-shadow: var(--shadow-gold);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold));
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(212, 168, 83, 0.35);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--color-cream);
+  color: var(--color-cream);
+}
+
+.btn-secondary:hover {
+  background: var(--color-cream);
+  color: var(--color-bg-dark);
+  transform: translateY(-2px);
+}
+
+.btn-outline-gold {
+  background: transparent;
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+}
+
+.btn-outline-gold:hover {
+  background: var(--color-gold);
+  color: var(--color-bg-dark);
 }
 
 /* Animations */
@@ -111,22 +199,41 @@ button {
   to { opacity: 1; }
 }
 
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
 @keyframes shimmer {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
 }
 
-.animate-fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
-.animate-fade-in {
-  animation: fadeIn 1s ease-out forwards;
+/* Selection */
+::selection {
+  background: var(--color-gold);
+  color: var(--color-bg-dark);
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -134,10 +241,32 @@ button {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-gold-dark);
-  border-radius: 4px;
+  background: linear-gradient(180deg, var(--color-gold-dark), var(--color-gold));
+  border-radius: 5px;
+  border: 2px solid var(--color-bg-dark);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-gold);
+  background: linear-gradient(180deg, var(--color-gold), var(--color-gold-light));
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* Smooth image loading */
+img {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+img[loading="lazy"] {
+  opacity: 0;
+}
+
+img[loading="lazy"].loaded,
+img:not([loading="lazy"]) {
+  opacity: 1;
 }

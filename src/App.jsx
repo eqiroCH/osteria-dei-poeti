@@ -1,8 +1,8 @@
 import './App.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import About from './components/About'
 import Menu from './components/Menu'
+import Events from './components/Events'
 import Gallery from './components/Gallery'
 import Reviews from './components/Reviews'
 import Contact from './components/Contact'
@@ -14,8 +14,8 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        <About />
         <Menu />
+        <Events />
         <Gallery />
         <Reviews />
         <Contact />
