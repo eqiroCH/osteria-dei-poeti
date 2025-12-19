@@ -321,71 +321,116 @@
   }
   
   .contact-header {
+    margin-bottom: 1.5rem;
+  }
+  
+  .phone-section {
     margin-bottom: 2rem;
   }
   
   .phone-button {
     padding: 0.75rem 1.25rem;
     width: 100%;
-    max-width: 280px;
+    max-width: 100%;
     gap: 0.75rem;
+    justify-content: center;
   }
   
   .phone-icon-wrapper {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .phone-icon-wrapper svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .phone-text {
+    text-align: center;
+  }
+  
+  .phone-label {
+    font-size: 0.6875rem;
+  }
+  
+  .phone-number {
+    font-size: 1.25rem;
+  }
+  
+  .info-grid {
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .info-card {
+    padding: 1.25rem 1rem;
+  }
+  
+  .card-header {
+    margin-bottom: 1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .card-header h4 {
+    font-size: 0.8125rem;
+    margin: 0;
+  }
+  
+  .card-icon {
     width: 32px;
     height: 32px;
   }
   
-  .phone-icon-wrapper svg {
-    width: 16px;
-    height: 16px;
-  }
-  
-  .phone-number {
-    font-size: 1.125rem;
-  }
-  
-  .info-card {
-    padding: 1rem 1.25rem;
-  }
-  
-  .card-header {
-    margin-bottom: 0.75rem;
-  }
-  
-  .card-icon {
-    width: 28px;
-    height: 28px;
-  }
-  
   .card-icon svg {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
   }
   
-  .card-content h4 {
-    font-size: 0.75rem;
+  .card-content {
+    margin-bottom: 1rem;
   }
   
   .card-content p {
-    font-size: 0.875rem;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin: 0.25rem 0;
+  }
+  
+  .card-link {
+    font-size: 0.8125rem;
+    margin-top: 0.75rem;
+  }
+  
+  .hours-list {
+    gap: 0.5rem;
   }
   
   .hours-row {
-    flex-direction: column;
-    gap: 0.125rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
     padding-bottom: 0.5rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    font-size: 0.8125rem;
+    font-size: 0.875rem;
   }
   
   .hours-row:last-child {
     border-bottom: none;
   }
   
-  .hours-row span:last-child {
-    text-align: left;
-    font-size: 0.8125rem;
+  .hours-day {
+    font-weight: 500;
+    color: var(--color-text);
+  }
+  
+  .hours-time {
+    text-align: right;
+    font-size: 0.875rem;
   }
   
   .map-container {

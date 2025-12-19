@@ -274,16 +274,18 @@
     display: none;
   }
   
-  .nav-cta .cta-text {
+  .desktop-cta {
     display: none;
   }
   
-  .nav-cta {
+  .mobile-cta {
+    display: flex;
     padding: 0.625rem;
     border-radius: 50%;
+    order: 2;
   }
   
-  .cta-icon {
+  .mobile-cta .cta-icon {
     display: block;
     width: 18px;
     height: 18px;
@@ -293,6 +295,7 @@
     display: flex;
     width: 40px;
     height: 40px;
+    order: 3;
   }
   
   .hamburger-line {
@@ -325,11 +328,11 @@
     font-size: 0.6875rem;
   }
   
-  .nav-cta {
+  .mobile-cta {
     padding: 0.5rem;
   }
   
-  .cta-icon {
+  .mobile-cta .cta-icon {
     width: 16px;
     height: 16px;
   }

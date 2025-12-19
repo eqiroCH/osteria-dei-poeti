@@ -93,6 +93,16 @@ function Gallery() {
     }
   }, [])
 
+  // Scroll buttons functionality
+  const scrollGallery = (direction) => {
+    if (!galleryRef.current) return
+    const scrollAmount = galleryRef.current.offsetWidth * 0.75
+    galleryRef.current.scrollBy({
+      left: direction * scrollAmount,
+      behavior: 'smooth'
+    })
+  }
+
   return (
     <section id="gallery" className="gallery">
       <div className="container">
@@ -106,14 +116,20 @@ function Gallery() {
         </div>
         
         {/* Grid */}
-        <div className="gallery-grid" ref={galleryRef}>
-          {galleryImages.map((image, index) => (
-            <div 
-              key={index} 
-              ref={el => itemRefs.current[index] = el}
-              className={`gallery-item item-${index + 1} ${centeredIndex === index ? 'centered' : ''}`}
-              onClick={() => openLightbox(index)}
-            >
+        <div className="gallery-wrapper">
+          <button className="gallery-scroll-btn gallery-scroll-left" onClick={() => scrollGallery(-1)} aria-label="Vorheriges Bild">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <polyline points="15 18 9 12 15 6"/>
+            </svg>
+          </button>
+          <div className="gallery-grid" ref={galleryRef}>
+            {galleryImages.map((image, index) => (
+              <div 
+                key={index} 
+                ref={el => itemRefs.current[index] = el}
+                className={`gallery-item item-${index + 1} ${centeredIndex === index ? 'centered' : ''}`}
+                onClick={() => openLightbox(index)}
+              >
               <img 
                 src={image.src} 
                 alt={image.alt} 
@@ -136,6 +152,12 @@ function Gallery() {
               </div>
             </div>
           ))}
+          </div>
+          <button className="gallery-scroll-btn gallery-scroll-right" onClick={() => scrollGallery(1)} aria-label="Nächstes Bild">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </button>
         </div>
         
         {/* Social Media CTA */}
