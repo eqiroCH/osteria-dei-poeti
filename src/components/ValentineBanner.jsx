@@ -69,11 +69,44 @@ function ValentineBanner({ isVisible, onClose }) {
                 <line x1="6" y1="6" x2="18" y2="18"/>
               </svg>
             </button>
-            <img 
-              src="/Bildschirmfoto%202026-01-21%20um%202.58.33%E2%80%AFAM.png"
-              alt="Valentinstags-Menü"
-              className="menu-image"
-            />
+            <div className="valentine-menu-card">
+              <h1 className="menu-restaurant">Osteria dei Poeti</h1>
+              <h2 className="menu-title">MENÙ DI SAN VALENTINO</h2>
+              
+              <div className="menu-section">
+                <h3>Antipasto</h3>
+                <p className="dish-it">Tartare di vitello con pane tostato, tartufo fresco e olio tartufato</p>
+                <p className="dish-de">Kalbstatar mit geröstetem Brot, frischem Trüffel und Trüffelöl</p>
+              </div>
+
+              <div className="menu-section">
+                <h3>Primo Piatto</h3>
+                <p className="dish-it">Tagliatelle dell'Osteria — strisce di vitello, porcini, tartufo fresco, olio tartufato e panna</p>
+                <p className="dish-de">Hausgemachte Tagliatelle mit Kalbfleischstreifen, Steinpilzen, frischem Trüffel, Trüffelöl und Sahne</p>
+              </div>
+
+              <div className="menu-section">
+                <h3>Secondo Piatto</h3>
+                <p className="dish-it">Tagliata di Ribeye con rucola, pomodorini Pachino, parmigiano e aceto glassato, con verdure</p>
+                <p className="dish-de">Ribeye-Steak in Scheiben geschnitten mit Rucola, Pachino-Kirschtomaten, Parmigiano Reggiano und Balsamico-Glasur, dazu Gemüse</p>
+              </div>
+
+              <div className="menu-section">
+                <h3>Dessert</h3>
+                <p className="dish-it">Tortino di cioccolato caldo con gelato alla prugna</p>
+                <p className="dish-de">Warmes Schokoladenküchlein mit Pflaumeneis</p>
+              </div>
+
+              <div className="menu-section menu-finale">
+                <p className="dish-it">Caffè e limoncello</p>
+                <p className="dish-de">Kaffee und Limoncello</p>
+              </div>
+
+              <div className="menu-footer">
+                <p>Per info e prenotazioni · <a href="tel:0447670501">044 767 05 01</a></p>
+                <p>Kreuzrai 1 – 8933 Maschwanden</p>
+              </div>
+            </div>
           </div>
         </div>
       )}

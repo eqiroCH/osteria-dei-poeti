@@ -320,13 +320,14 @@
 
 .pdf-modal-content {
   position: relative;
-  width: 90%;
-  max-width: 900px;
-  height: 90vh;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
+  width: auto;
+  max-width: 550px;
+  max-height: 95vh;
+  background: linear-gradient(160deg, #722F37 0%, #5C1A1B 50%, #3D0C0C 100%);
+  border-radius: 12px;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.7),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  overflow-y: auto;
   animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -376,6 +377,96 @@
   background: #fff;
   border-radius: 16px;
   display: block;
+}
+
+/* Valentine Menu Card Styling */
+.valentine-menu-card {
+  padding: 2rem 2rem;
+  text-align: center;
+  color: #fff;
+}
+
+.menu-restaurant {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.02em;
+}
+
+.menu-title {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  color: #D4AF37;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.menu-section {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.menu-section:last-of-type {
+  border-bottom: none;
+}
+
+.menu-section h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.05em;
+}
+
+.dish-it {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.4;
+  margin-bottom: 0.25rem;
+}
+
+.dish-de {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: #D4AF37;
+  line-height: 1.4;
+}
+
+.menu-finale {
+  padding-top: 0.25rem;
+  margin-bottom: 1rem;
+  border-bottom: none;
+}
+
+.menu-finale .dish-it {
+  font-size: 0.9rem;
+}
+
+.menu-footer {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.menu-footer p {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.2rem;
+}
+
+.menu-footer a {
+  color: #D4AF37;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.menu-footer a:hover {
+  color: #fff;
 }
 
 @media (max-width: 700px) {
