@@ -297,56 +297,52 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .valentine-banner {
-    top: 4.5rem;
-    right: 50%;
-    transform: translateX(50%);
-    width: 260px;
-    height: 245px;
+    top: 0.75rem;
+    right: 0.75rem;
+    transform: none;
+    width: 200px;
+    height: 190px;
   }
   
   .valentine-content {
-    padding: 2.5rem 1.5rem 2rem;
-    clip-path: path('M130,195 C130,195 50,145 50,98 C50,62 77,44 98,44 C116,44 130,62 130,80 C130,62 153,44 175,44 C196,44 225,62 225,98 C225,145 130,195 130,195 Z');
-    -webkit-clip-path: path('M130,195 C130,195 50,145 50,98 C50,62 77,44 98,44 C116,44 130,62 130,80 C130,62 153,44 175,44 C196,44 225,62 225,98 C225,145 130,195 130,195 Z');
+    padding: 2rem 1.25rem 1.75rem;
+    clip-path: path('M100,150 C100,150 38,112 38,75 C38,48 60,34 76,34 C90,34 100,48 100,62 C100,48 118,34 138,34 C154,34 175,48 175,75 C175,112 100,150 100,150 Z');
+    -webkit-clip-path: path('M100,150 C100,150 38,112 38,75 C38,48 60,34 76,34 C90,34 100,48 100,62 C100,48 118,34 138,34 C154,34 175,48 175,75 C175,112 100,150 100,150 Z');
   }
   
   .valentine-text {
-    gap: 0.2rem;
-    margin-bottom: 0.6rem;
-    padding: 0 0.5rem;
+    gap: 0.15rem;
+    margin-bottom: 0.5rem;
+    padding: 0 0.25rem;
   }
   
   .valentine-label {
-    font-size: 0.7rem;
-    margin-bottom: 0.25rem;
-    letter-spacing: 0.2em;
+    font-size: 0.55rem;
+    margin-bottom: 0.2rem;
+    letter-spacing: 0.15em;
   }
   
   .valentine-title {
-    font-size: 1rem;
-    margin-bottom: 0.15rem;
+    font-size: 0.8rem;
+    margin-bottom: 0.1rem;
     padding-left: 0;
   }
   
   .valentine-subtitle {
-    font-size: 0.65rem;
+    font-size: 0.5rem;
   }
   
   .valentine-cta {
-    font-size: 0.6rem;
-    padding: 0.45rem 0.9rem;
-    gap: 0.3rem;
+    font-size: 0.5rem;
+    padding: 0.35rem 0.7rem;
+    gap: 0.2rem;
   }
   
   .cta-arrow {
-    width: 10px;
-    height: 10px;
-  }
-  
-  .floating-heart {
-    font-size: 0.7rem;
+    width: 8px;
+    height: 8px;
   }
   
   .floating-hearts {
@@ -354,15 +350,74 @@
   }
   
   .valentine-close {
-    top: 0.25rem;
-    right: 0.25rem;
-    width: 22px;
-    height: 22px;
+    top: 0.15rem;
+    right: 0.15rem;
+    width: 18px;
+    height: 18px;
   }
   
   .valentine-close svg {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
+  }
+}
+
+@media (max-width: 400px) {
+  .valentine-banner {
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 160px;
+    height: 150px;
+  }
+  
+  .valentine-content {
+    padding: 1.75rem 1rem 1.5rem;
+    clip-path: path('M80,120 C80,120 30,90 30,60 C30,38 48,27 61,27 C72,27 80,38 80,50 C80,38 95,27 110,27 C123,27 140,38 140,60 C140,90 80,120 80,120 Z');
+    -webkit-clip-path: path('M80,120 C80,120 30,90 30,60 C30,38 48,27 61,27 C72,27 80,38 80,50 C80,38 95,27 110,27 C123,27 140,38 140,60 C140,90 80,120 80,120 Z');
+  }
+  
+  .valentine-text {
+    gap: 0.1rem;
+    margin-bottom: 0.4rem;
+    padding: 0 0.25rem;
+  }
+  
+  .valentine-label {
+    font-size: 0.45rem;
+    margin-bottom: 0.15rem;
+    letter-spacing: 0.12em;
+  }
+  
+  .valentine-title {
+    font-size: 0.65rem;
+    margin-bottom: 0.1rem;
+  }
+  
+  .valentine-subtitle {
+    font-size: 0.4rem;
+  }
+  
+  .valentine-cta {
+    font-size: 0.4rem;
+    padding: 0.3rem 0.5rem;
+    gap: 0.15rem;
+  }
+  
+  .cta-arrow {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .valentine-close {
+    top: 0.1rem;
+    right: 0.1rem;
+    width: 16px;
+    height: 16px;
+  }
+  
+  .valentine-close svg {
+    width: 7px;
+    height: 7px;
   }
 }
 
