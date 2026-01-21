@@ -283,16 +283,7 @@
   }
   
   .mobile-cta {
-    display: flex;
-    padding: 0.625rem;
-    border-radius: 50%;
-    order: 2;
-  }
-  
-  .mobile-cta .cta-icon {
-    display: block;
-    width: 18px;
-    height: 18px;
+    display: none;
   }
   
   .mobile-menu-btn {
@@ -300,6 +291,7 @@
     width: 40px;
     height: 40px;
     order: 3;
+    margin-left: auto;
   }
   
   .hamburger-line {

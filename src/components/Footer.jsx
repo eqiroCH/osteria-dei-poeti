@@ -49,11 +49,10 @@ function Footer() {
             {/* Navigation */}
             <div className="footer-nav">
               <h4>Navigation</h4>
-              <ul>
+              <ul className="footer-nav-inline">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#menu">Speisekarte</a></li>
                 <li><a href="#gallery">Galerie</a></li>
-                {/* <li><a href="#events">Events</a></li> */}
                 <li><a href="#reviews">Bewertungen</a></li>
                 <li><a href="#contact">Kontakt</a></li>
               </ul>

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import './Gallery.css'
 
 // Alle Bilder für die Lightbox
@@ -25,6 +25,8 @@ const previewImages = allImages.slice(0, 4)
 
 function Gallery() {
   const [selectedImage, setSelectedImage] = useState(null)
+  const touchStartX = useRef(0)
+  const touchEndX = useRef(0)
 
   const openLightbox = (index) => {
     setSelectedImage(index)
@@ -43,6 +45,30 @@ function Gallery() {
       if (newIndex >= allImages.length) return 0
       return newIndex
     })
+  }
+
+  // Swipe handlers for mobile
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX
+  }
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.touches[0].clientX
+  }
+
+  const handleTouchEnd = () => {
+    const diff = touchStartX.current - touchEndX.current
+    const minSwipeDistance = 50
+
+    if (Math.abs(diff) > minSwipeDistance) {
+      if (diff > 0) {
+        // Swipe left - next image
+        navigateImage(1)
+      } else {
+        // Swipe right - previous image
+        navigateImage(-1)
+      }
+    }
   }
 
   return (
@@ -177,7 +203,13 @@ function Gallery() {
 
       {/* Lightbox */}
       {selectedImage !== null && (
-        <div className="lightbox" onClick={closeLightbox}>
+        <div 
+          className="lightbox" 
+          onClick={closeLightbox}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
           <button className="lightbox-close" onClick={closeLightbox}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <line x1="18" y1="6" x2="6" y2="18"/>
@@ -214,6 +246,7 @@ function Gallery() {
             </svg>
           </button>
           
+          <div className="lightbox-swipe-hint">← Wischen zum Navigieren →</div>
           <div className="lightbox-counter">
             {selectedImage + 1} / {allImages.length}
           </div>
