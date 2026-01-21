@@ -27,7 +27,7 @@ function Navbar() {
 
   const navLinks = [
     { href: '#menu', label: 'Speisekarte' },
-    { href: '#events', label: 'Events' },
+    // { href: '#events', label: 'Events' }, // Temporär ausgeblendet
     { href: '#gallery', label: 'Galerie' },
     { href: '#reviews', label: 'Bewertungen' },
     { href: '#contact', label: 'Kontakt' },

@@ -305,9 +305,8 @@
 
 .day-item {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 0.125rem;
+  justify-content: center;
   padding: 0.5rem 0.75rem;
   background: rgba(212, 168, 83, 0.08);
   border: 1px solid rgba(212, 168, 83, 0.15);
@@ -331,9 +330,11 @@
 }
 
 .day-full {
-  font-size: 0.6875rem;
-  color: var(--color-text);
-  font-weight: 500;
+  display: none;
+}
+
+.time-value-mobile {
+  display: none;
 }
 
 /* Time Section */
@@ -547,7 +548,16 @@
   }
   
   .time-value {
+    display: none;
+  }
+  
+  .time-value-mobile {
+    display: block;
     font-size: 0.6875rem;
+    font-weight: 700;
+    color: var(--color-cream);
+    letter-spacing: 0.05em;
+    font-variant-numeric: tabular-nums;
   }
   
   .events-note {

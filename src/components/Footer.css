@@ -61,22 +61,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--color-bg-section);
-  border: 1px solid rgba(212, 168, 83, 0.2);
-  border-radius: var(--radius-sm);
-  color: var(--color-text);
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  color: white;
   transition: all var(--transition-smooth);
 }
 
 .social-link svg {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
 }
 
 .social-link:hover {
-  background: var(--color-gold);
-  border-color: var(--color-gold);
-  color: var(--color-bg-dark);
+  background: transparent;
+  color: var(--color-gold);
   transform: translateY(-3px);
 }
 
@@ -149,6 +148,24 @@
   margin-bottom: 1rem;
   font-size: 0.9375rem;
   color: var(--color-text-muted);
+}
+
+.address-link {
+  text-decoration: none;
+  color: white;
+  transition: all var(--transition-fast);
+}
+
+.address-link:hover {
+  color: var(--color-gold);
+}
+
+.address-link span {
+  color: white;
+}
+
+.address-link:hover span {
+  color: var(--color-gold);
 }
 
 .address-line svg {

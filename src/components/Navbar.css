@@ -112,6 +112,10 @@
   flex-shrink: 0;
 }
 
+.mobile-cta {
+  display: none;
+}
+
 .nav-cta:hover {
   background: var(--color-gold);
   color: var(--color-bg-dark);

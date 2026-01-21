@@ -93,9 +93,9 @@
 /* Info Grid */
 .info-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto 3rem;
   position: relative;
   z-index: 1;
@@ -164,7 +164,7 @@
 }
 
 .card-content p {
-  color: var(--color-text);
+  color: white;
   font-size: 0.9375rem;
   line-height: 1.5;
   margin: 0 0 0.25rem 0;
@@ -230,6 +230,44 @@
   color: var(--color-gold);
 }
 
+/* Contact List */
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.contact-item:hover {
+  transform: translateX(4px);
+}
+
+.contact-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+}
+
+.contact-value {
+  font-size: 0.875rem;
+  color: var(--color-text);
+  word-break: break-all;
+  transition: color var(--transition-fast);
+}
+
+.contact-item:hover .contact-value {
+  color: var(--color-gold);
+}
+
 /* Map */
 .map-wrapper {
   position: relative;
@@ -286,6 +324,12 @@
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .info-grid {
     grid-template-columns: 1fr;

@@ -42,7 +42,7 @@ function Contact() {
               </div>
             </div>
             <div className="card-content">
-              <p>Kreuzrai 1</p>
+              <p>Kreuzrai 1,</p>
               <p>8933 Maschwanden</p>
             </div>
             <a 
@@ -76,11 +76,11 @@ function Contact() {
                 </div>
                 <div className="hours-row">
                   <span className="hours-day">Sa</span>
-                  <span className="hours-time">10:00 - 22:00</span>
+                  <span className="hours-time">17:00 - 22:00</span>
                 </div>
                 <div className="hours-row">
                   <span className="hours-day">So</span>
-                  <span className="hours-time">10:00 - 21:00</span>
+                  <span className="hours-time">12:00 - 21:00</span>
                 </div>
                 <div className="hours-row closed">
                   <span className="hours-day">Mo</span>
@@ -89,6 +89,35 @@ function Contact() {
               </div>
             </div>
           </div>
+
+          <div className="info-card">
+            <div className="card-header">
+              <h4>Kontakt</h4>
+              <div className="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+            </div>
+            <div className="card-content">
+              <div className="contact-list">
+                <a href="mailto:Osteriadeipoeti391@gmail.com" className="contact-item">
+                  <span className="contact-label">Restaurant:</span>
+                  <span className="contact-value">Osteriadeipoeti391@gmail.com</span>
+                </a>
+                <a href="mailto:Gcrocicchia79@gmail.com" className="contact-item">
+                  <span className="contact-label">Giampiero:</span>
+                  <span className="contact-value">Gcrocicchia79@gmail.com</span>
+                </a>
+                <a href="mailto:m.grossi.mg@gmail.com" className="contact-item">
+                  <span className="contact-label">Matteo:</span>
+                  <span className="contact-value">m.grossi.mg@gmail.com</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

@@ -19,14 +19,14 @@
 .hero-bg-image {
   position: absolute;
   inset: 0;
-  background: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&q=80') center/cover no-repeat;
-  transform: scale(1.05);
+  background: url('/Home-Bild.png') center/cover no-repeat;
+  transform: scale(1.02);
   animation: slowZoom 20s ease-in-out infinite alternate;
 }
 
 @keyframes slowZoom {
   0% { transform: scale(1); }
-  100% { transform: scale(1.08); }
+  100% { transform: scale(1.03); }
 }
 
 .hero-overlay {
@@ -182,11 +182,15 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   animation: fadeIn 0.8s ease-out 0.7s both;
   transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
 }
 
 .hero-quote:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  border-left-color: var(--color-gold-light);
 }
 
 .hero-quote .quote-icon {
@@ -197,6 +201,11 @@
   height: 24px;
   color: var(--color-gold);
   opacity: 0.4;
+  transition: opacity var(--transition-fast);
+}
+
+.hero-quote:hover .quote-icon {
+  opacity: 0.6;
 }
 
 .hero-quote p {
@@ -205,35 +214,8 @@
   font-size: clamp(1rem, 2.2vw, 1.25rem);
   color: var(--color-cream);
   line-height: 1.7;
-  margin: 0 0 0.75rem 0;
+  margin: 0;
   padding-left: 3rem;
-}
-
-.hero-quote cite {
-  display: block;
-  font-size: 0.8125rem;
-  color: var(--color-gold);
-  font-style: normal;
-  font-weight: 500;
-  padding-left: 3rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.quote-link {
-  text-decoration: none;
-  display: inline-block;
-  transition: all var(--transition-fast);
-}
-
-.quote-link:hover cite {
-  color: var(--color-gold-light);
-  transform: translateX(4px);
-}
-
-.quote-link cite {
-  transition: all var(--transition-fast);
-  cursor: pointer;
 }
 
 /* Actions */
@@ -512,10 +494,6 @@
     padding-left: 2rem;
     line-height: 1.5;
     margin: 0;
-  }
-  
-  .hero-quote .mobile-hidden {
-    display: none;
   }
   
   .hero-actions {

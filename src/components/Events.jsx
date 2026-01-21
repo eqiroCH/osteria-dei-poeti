@@ -47,6 +47,11 @@ function Events() {
     return abbreviations[day] || day.substring(0, 2)
   }
 
+  const formatTimeForMobile = (time) => {
+    // Convert "19:00 - 23:00" to "19-23"
+    return time.replace(/:00/g, '').replace(' - ', '-')
+  }
+
   return (
     <section id="events" className="events">
       <div className="events-bg">
@@ -130,7 +135,6 @@ function Events() {
                         {event.days.map((day, i) => (
                           <div key={i} className="day-item">
                             <span className="day-abbr">{getDayAbbreviation(day)}</span>
-                            <span className="day-full">{day}</span>
                           </div>
                         ))}
                       </div>
@@ -147,6 +151,7 @@ function Events() {
                       </div>
                       <div className="time-display">
                         <span className="time-value">{event.time}</span>
+                        <span className="time-value-mobile">{formatTimeForMobile(event.time)}</span>
                       </div>
                     </div>
                   </div>
