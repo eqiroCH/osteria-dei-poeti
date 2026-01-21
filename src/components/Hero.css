@@ -218,6 +218,11 @@
   padding-left: 3rem;
 }
 
+/* Short quote hidden on desktop */
+.hero-quote .quote-short {
+  display: none;
+}
+
 /* Actions */
 .hero-actions {
   display: flex;
@@ -494,6 +499,15 @@
     padding-left: 2rem;
     line-height: 1.5;
     margin: 0;
+  }
+  
+  /* Show short quote, hide full on mobile */
+  .hero-quote .quote-full {
+    display: none;
+  }
+  
+  .hero-quote .quote-short {
+    display: block;
   }
   
   .hero-actions {
