@@ -8,6 +8,8 @@ import Menu from './components/Menu'
 import Gallery from './components/Gallery'
 import Reviews from './components/Reviews'
 import Contact from './components/Contact'
+import Impressum from './components/Impressum'
+import Datenschutz from './components/Datenschutz'
 import Footer from './components/Footer'
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
         <Gallery />
         <Reviews />
         <Contact />
+        <Impressum />
+        <Datenschutz />
       </main>
       <Footer />
     </>
