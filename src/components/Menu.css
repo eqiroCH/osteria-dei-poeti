@@ -17,9 +17,274 @@
 /* Header */
 .menu-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   position: relative;
   z-index: 1;
+}
+
+/* Valentine's Day Special Button */
+.valentine-special-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0 auto 2.5rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, rgba(196, 30, 58, 0.15) 0%, rgba(139, 10, 26, 0.2) 100%);
+  border: 1px solid rgba(196, 30, 58, 0.4);
+  border-radius: 60px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.valentine-special-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(196, 30, 58, 0.3) 0%, rgba(139, 10, 26, 0.4) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.valentine-special-btn:hover::before {
+  opacity: 1;
+}
+
+.valentine-special-btn:hover {
+  border-color: rgba(196, 30, 58, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(196, 30, 58, 0.3);
+}
+
+.valentine-heart {
+  font-size: 1.5rem;
+  color: #C41E3A;
+  position: relative;
+  z-index: 1;
+  animation: heartPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes heartPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+.valentine-btn-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.valentine-btn-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-style: italic;
+  color: #fff;
+}
+
+.valentine-btn-subtitle {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.05em;
+}
+
+.valentine-arrow {
+  width: 20px;
+  height: 20px;
+  color: #C41E3A;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.valentine-special-btn:hover .valentine-arrow {
+  transform: translateX(4px);
+}
+
+/* Valentine Menu Modal in Menu Section */
+.valentine-menu-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.valentine-menu-modal {
+  position: relative;
+  width: auto;
+  max-width: 550px;
+  max-height: 95vh;
+  background: linear-gradient(160deg, #722F37 0%, #5C1A1B 50%, #3D0C0C 100%);
+  border-radius: 12px;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.7),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  overflow-y: auto;
+  animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.valentine-menu-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.valentine-menu-close:hover {
+  background: rgba(0, 0, 0, 0.7);
+  transform: scale(1.1);
+}
+
+.valentine-menu-close svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Reuse valentine menu card styles */
+.valentine-menu-modal .valentine-menu-card {
+  padding: 2rem 2rem;
+  text-align: center;
+  color: #fff;
+}
+
+.valentine-menu-modal .menu-restaurant {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.02em;
+}
+
+.valentine-menu-modal .menu-title {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  color: #D4AF37;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.valentine-menu-modal .menu-section {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.valentine-menu-modal .menu-section:last-of-type {
+  border-bottom: none;
+}
+
+.valentine-menu-modal .menu-section h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.05em;
+}
+
+.valentine-menu-modal .dish-it {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.4;
+  margin-bottom: 0.25rem;
+}
+
+.valentine-menu-modal .dish-de {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: #D4AF37;
+  line-height: 1.4;
+}
+
+.valentine-menu-modal .menu-finale {
+  padding-top: 0.25rem;
+  margin-bottom: 1rem;
+  border-bottom: none;
+}
+
+.valentine-menu-modal .menu-footer {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.valentine-menu-modal .menu-footer p {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.2rem;
+}
+
+.valentine-menu-modal .menu-footer a {
+  color: #D4AF37;
+  text-decoration: none;
+}
+
+/* Responsive for Valentine Button */
+@media (max-width: 600px) {
+  .valentine-special-btn {
+    padding: 0.875rem 1.5rem;
+    gap: 0.75rem;
+  }
+  
+  .valentine-heart {
+    font-size: 1.25rem;
+  }
+  
+  .valentine-btn-title {
+    font-size: 0.95rem;
+  }
+  
+  .valentine-btn-subtitle {
+    font-size: 0.65rem;
+  }
+  
+  .valentine-arrow {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .valentine-menu-modal-overlay {
+    padding: 1rem;
+  }
+  
+  .valentine-menu-modal {
+    max-height: 90vh;
+  }
 }
 
 /* Category Tabs */
