@@ -1,7 +1,13 @@
 import './Footer.css'
 
-function Footer() {
+function Footer({ currentPage, setCurrentPage }) {
   const currentYear = new Date().getFullYear()
+
+  const handleLegalClick = (e, page) => {
+    e.preventDefault()
+    setCurrentPage(page)
+    window.scrollTo(0, 0)
+  }
 
   return (
     <footer className="footer">
@@ -127,9 +133,9 @@ function Footer() {
               {currentYear} Osteria dei Poeti. Alle Rechte vorbehalten.
             </p>
             <div className="footer-legal">
-              <a href="#impressum">Impressum</a>
+              <a href="#" onClick={(e) => handleLegalClick(e, 'impressum')}>Impressum</a>
               <span className="separator"></span>
-              <a href="#datenschutz">Datenschutz</a>
+              <a href="#" onClick={(e) => handleLegalClick(e, 'datenschutz')}>Datenschutz</a>
             </div>
           </div>
         </div>

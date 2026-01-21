@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import './Navbar.css'
 
-function Navbar({ withBanner = false }) {
+function Navbar({ withBanner = false, currentPage, setCurrentPage }) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
@@ -35,13 +35,25 @@ function Navbar({ withBanner = false }) {
 
   const handleLinkClick = () => {
     setIsMobileMenuOpen(false)
+    if (currentPage !== 'home') {
+      setCurrentPage('home')
+    }
   }
 
   return (
     <header className={`navbar ${isScrolled ? 'scrolled' : ''} ${withBanner ? 'with-banner' : ''}`}>
       <div className="navbar-container">
         {/* Logo */}
-        <a href="#home" className="navbar-logo" onClick={handleLinkClick}>
+        <a 
+          href="#" 
+          className="navbar-logo" 
+          onClick={(e) => {
+            e.preventDefault()
+            setCurrentPage('home')
+            window.scrollTo(0, 0)
+            handleLinkClick()
+          }}
+        >
           <span className="logo-main">Osteria</span>
           <span className="logo-sub">dei Poeti</span>
         </a>
@@ -51,7 +63,23 @@ function Navbar({ withBanner = false }) {
           <ul className="nav-links">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a href={link.href}>{link.label}</a>
+                <a 
+                  href={link.href}
+                  onClick={(e) => {
+                    if (currentPage !== 'home') {
+                      e.preventDefault()
+                      setCurrentPage('home')
+                      setTimeout(() => {
+                        const element = document.querySelector(link.href)
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth' })
+                        }
+                      }, 100)
+                    }
+                  }}
+                >
+                  {link.label}
+                </a>
               </li>
             ))}
           </ul>
@@ -90,7 +118,22 @@ function Navbar({ withBanner = false }) {
             <ul className="mobile-nav-links">
               {navLinks.map((link, index) => (
                 <li key={link.href} style={{ animationDelay: `${index * 0.05}s` }}>
-                  <a href={link.href} onClick={handleLinkClick}>
+                  <a 
+                    href={link.href} 
+                    onClick={(e) => {
+                      if (currentPage !== 'home') {
+                        e.preventDefault()
+                        setCurrentPage('home')
+                        setTimeout(() => {
+                          const element = document.querySelector(link.href)
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' })
+                          }
+                        }, 100)
+                      }
+                      handleLinkClick()
+                    }}
+                  >
                     {link.label}
                   </a>
                 </li>

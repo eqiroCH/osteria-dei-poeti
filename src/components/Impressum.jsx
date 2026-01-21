@@ -1,10 +1,22 @@
 import './Impressum.css'
 
-function Impressum() {
+function Impressum({ setCurrentPage }) {
   return (
     <section id="impressum" className="impressum">
       <div className="container">
         <div className="legal-header">
+          <button 
+            className="back-button"
+            onClick={() => {
+              setCurrentPage('home')
+              window.scrollTo(0, 0)
+            }}
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Zurück zur Startseite
+          </button>
           <h2 className="section-title">Impressum</h2>
         </div>
         

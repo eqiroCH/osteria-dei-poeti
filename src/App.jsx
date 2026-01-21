@@ -14,22 +14,36 @@ import Footer from './components/Footer'
 
 function App() {
   const [bannerVisible, setBannerVisible] = useState(true)
+  const [currentPage, setCurrentPage] = useState('home')
+
+  const renderPage = () => {
+    switch (currentPage) {
+      case 'impressum':
+        return <Impressum setCurrentPage={setCurrentPage} />
+      case 'datenschutz':
+        return <Datenschutz setCurrentPage={setCurrentPage} />
+      default:
+        return (
+          <>
+            <Hero />
+            <Menu />
+            {/* <Events /> */} {/* Temporär ausgeblendet - Events kommen später */}
+            <Gallery />
+            <Reviews />
+            <Contact />
+          </>
+        )
+    }
+  }
 
   return (
     <>
-      <ValentineBanner isVisible={bannerVisible} onClose={() => setBannerVisible(false)} />
-      <Navbar withBanner={bannerVisible} />
+      <ValentineBanner isVisible={bannerVisible && currentPage === 'home'} onClose={() => setBannerVisible(false)} />
+      <Navbar withBanner={bannerVisible && currentPage === 'home'} currentPage={currentPage} setCurrentPage={setCurrentPage} />
       <main>
-        <Hero />
-        <Menu />
-        {/* <Events /> */} {/* Temporär ausgeblendet - Events kommen später */}
-        <Gallery />
-        <Reviews />
-        <Contact />
-        <Impressum />
-        <Datenschutz />
+        {renderPage()}
       </main>
-      <Footer />
+      <Footer currentPage={currentPage} setCurrentPage={setCurrentPage} />
     </>
   )
 }
