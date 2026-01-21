@@ -1,0 +1,403 @@
+.valentine-banner {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1100;
+  width: 600px;
+  height: 580px;
+  animation: slideInRight 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+             floatHeart 3s ease-in-out infinite;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes floatHeart {
+  0%, 100% {
+    transform: translateY(0) translateX(0) scale(1);
+  }
+  33% {
+    transform: translateY(-8px) translateX(3px) scale(1.01);
+  }
+  66% {
+    transform: translateY(-12px) translateX(-2px) scale(1.02);
+  }
+}
+
+/* Heart shape using clip-path */
+.valentine-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(160deg, #D63447 0%, #C41E3A 40%, #8B0A1A 100%);
+  backdrop-filter: blur(20px);
+  clip-path: path('M300,465 C300,465 115,345 115,230 C115,145 175,105 230,105 C275,105 300,145 300,190 C300,145 345,105 410,105 C465,105 530,145 530,230 C530,345 300,465 300,465 Z');
+  -webkit-clip-path: path('M300,465 C300,465 115,345 115,230 C115,145 175,105 230,105 C275,105 300,145 300,190 C300,145 345,105 410,105 C465,105 530,145 530,230 C530,345 300,465 300,465 Z');
+  box-shadow: 0 15px 60px rgba(196, 30, 58, 0.6),
+              inset 0 0 80px rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 3.5rem 5rem;
+  overflow: visible;
+}
+
+/* Floating hearts coming from the heart */
+.floating-hearts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 1;
+}
+
+.floating-heart {
+  position: absolute;
+  color: #C41E3A;
+  font-size: 1.2rem;
+  opacity: 0.8;
+  animation: floatUp 4s ease-out infinite;
+  transform-origin: center;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) translateX(0) scale(1) rotate(0deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-60px) translateX(-15px) scale(1.3) rotate(-15deg);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-120px) translateX(-30px) scale(0.9) rotate(-30deg);
+    opacity: 0;
+  }
+}
+
+.valentine-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 0 2rem;
+}
+
+.valentine-label {
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #FFD700;
+  text-shadow: 0 2px 10px rgba(255, 215, 0, 0.4);
+  margin-bottom: 0.75rem;
+}
+
+.valentine-title {
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  font-weight: 600;
+  font-style: italic;
+  color: #fff;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.valentine-subtitle {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+.valentine-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #8B0A1A;
+  background: linear-gradient(135deg, #FFD700 0%, #FFC107 100%);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  position: relative;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  pointer-events: auto;
+}
+
+.cta-arrow {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.valentine-cta:hover {
+  background: linear-gradient(135deg, #fff 0%, #FFF8DC 100%);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 30px rgba(255, 215, 0, 0.6);
+}
+
+.valentine-cta:hover .cta-arrow {
+  transform: translateX(3px);
+}
+
+.valentine-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.valentine-close svg {
+  width: 16px;
+  height: 16px;
+}
+
+.valentine-close:hover {
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  transform: scale(1.1) rotate(90deg);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .valentine-banner {
+    top: 1rem;
+    right: 1rem;
+    width: 440px;
+    height: 420px;
+  }
+  
+  .valentine-content {
+    padding: 4rem 2.5rem 3rem;
+    clip-path: path('M220,335 C220,335 85,250 85,165 C85,105 125,75 165,75 C195,75 220,105 220,135 C220,105 260,75 300,75 C340,75 380,105 380,165 C380,250 220,335 220,335 Z');
+    -webkit-clip-path: path('M220,335 C220,335 85,250 85,165 C85,105 125,75 165,75 C195,75 220,105 220,135 C220,105 260,75 300,75 C340,75 380,105 380,165 C380,250 220,335 220,335 Z');
+  }
+  
+  .valentine-text {
+    gap: 0.4rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .valentine-label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .valentine-title {
+    font-size: 1.7rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .valentine-subtitle {
+    font-size: 1rem;
+  }
+  
+  .valentine-cta {
+    font-size: 0.85rem;
+    padding: 0.75rem 1.5rem;
+  }
+  
+  .valentine-cta svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .valentine-banner {
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 340px;
+    height: 320px;
+  }
+  
+  .valentine-content {
+    padding: 3.5rem 2rem 2.5rem;
+    clip-path: path('M170,255 C170,255 65,190 65,128 C65,80 100,57 128,57 C152,57 170,80 170,104 C170,80 200,57 232,57 C262,57 295,80 295,128 C295,190 170,255 170,255 Z');
+    -webkit-clip-path: path('M170,255 C170,255 65,190 65,128 C65,80 100,57 128,57 C152,57 170,80 170,104 C170,80 200,57 232,57 C262,57 295,80 295,128 C295,190 170,255 170,255 Z');
+  }
+  
+  .valentine-text {
+    gap: 0.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .valentine-label {
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.25em;
+  }
+  
+  .valentine-title {
+    font-size: 1.35rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .valentine-subtitle {
+    font-size: 0.85rem;
+  }
+  
+  .valentine-cta {
+    font-size: 0.75rem;
+    padding: 0.65rem 1.25rem;
+  }
+  
+  .valentine-cta svg {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .floating-heart {
+    font-size: 0.9rem;
+  }
+  
+  .valentine-close {
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 26px;
+    height: 26px;
+  }
+  
+  .valentine-close svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* PDF Modal */
+.pdf-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+  padding: 2rem;
+}
+
+.pdf-modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 900px;
+  height: 90vh;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.pdf-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.pdf-modal-close:hover {
+  background: rgba(196, 30, 58, 0.9);
+  transform: scale(1.1);
+}
+
+.pdf-modal-close svg {
+  width: 20px;
+  height: 20px;
+}
+
+.menu-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 16px;
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .pdf-modal-overlay {
+    padding: 1rem;
+  }
+  
+  .pdf-modal-content {
+    width: 100%;
+    height: 95vh;
+    border-radius: 12px;
+  }
+  
+  .pdf-modal-close {
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 36px;
+    height: 36px;
+  }
+  
+  .pdf-modal-close svg {
+    width: 18px;
+    height: 18px;
+  }
+}

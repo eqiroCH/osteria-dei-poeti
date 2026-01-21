@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import './Navbar.css'
 
-function Navbar() {
+function Navbar({ withBanner = false }) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
@@ -38,7 +38,7 @@ function Navbar() {
   }
 
   return (
-    <header className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+    <header className={`navbar ${isScrolled ? 'scrolled' : ''} ${withBanner ? 'with-banner' : ''}`}>
       <div className="navbar-container">
         {/* Logo */}
         <a href="#home" className="navbar-logo" onClick={handleLinkClick}>
