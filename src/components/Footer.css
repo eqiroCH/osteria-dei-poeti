@@ -323,42 +323,26 @@
     padding-left: 0;
   }
   
-  /* Öffnungszeiten kompakter - inline */
-  .footer-hours .hours-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem 1.5rem;
-  }
-  
+  /* Öffnungszeiten kompakter */
   .footer-hours .hours-list li {
     flex-direction: row;
     justify-content: center;
-    gap: 0.4rem;
-    padding-bottom: 0;
-    margin-bottom: 0;
+    gap: 0.5rem;
+    padding-bottom: 0.25rem;
+    margin-bottom: 0.25rem;
     border-bottom: none;
-    font-size: 0.7rem;
-    white-space: nowrap;
+    font-size: 0.75rem;
   }
   
   .footer-hours .hours-list li:last-child {
     border-bottom: none;
   }
   
-  /* Kontakt kompakter - inline */
-  .footer-contact address {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.75rem 1.5rem;
-  }
-  
+  /* Kontakt kompakter */
   .address-line {
     justify-content: center;
-    font-size: 0.7rem;
-    margin-bottom: 0;
-    gap: 0.4rem;
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
   }
   
   .address-line svg {
@@ -368,10 +352,6 @@
   
   .address-line span {
     text-align: left;
-  }
-  
-  .address-line br {
-    display: none;
   }
   
   .footer-bottom {
