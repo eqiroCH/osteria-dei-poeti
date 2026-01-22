@@ -50,7 +50,7 @@ function Gallery() {
   // Swipe handlers for mobile
   const handleTouchStart = (e) => {
     touchStartX.current = e.touches[0].clientX
-  }
+    }
 
   const handleTouchMove = (e) => {
     touchEndX.current = e.touches[0].clientX
@@ -113,7 +113,7 @@ function Gallery() {
             <div 
               className="gallery-item"
               onClick={() => openLightbox(2)}
-            >
+              >
               <img src={previewImages[2].src} alt={previewImages[2].alt} />
               <div className="item-overlay">
                 <span className="item-category">{previewImages[2].category}</span>

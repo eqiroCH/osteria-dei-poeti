@@ -429,16 +429,16 @@ function Menu() {
             const hasDescription = item.description && item.description.length > 0
             
             return (
-              <article 
-                key={item.name} 
+            <article 
+              key={item.name} 
                 className={`menu-card ${item.special ? 'featured' : ''} ${isExpanded ? 'expanded' : ''} ${hasDescription ? 'has-details' : ''}`}
-                style={{ animationDelay: `${index * 0.08}s` }}
-              >
-                <div className="card-content">
+              style={{ animationDelay: `${index * 0.08}s` }}
+            >
+              <div className="card-content">
                   {/* Top Row: Name + Price */}
                   <div className="card-top">
                     <div className="item-names">
-                      <h3 className="item-name">{item.name}</h3>
+                  <h3 className="item-name">{item.name}</h3>
                       {item.nameDE && <p className="item-name-german">{item.nameDE}</p>}
                     </div>
                     <div className="item-price">{item.price} CHF</div>
@@ -460,29 +460,29 @@ function Menu() {
                       <div className="expand-placeholder"></div>
                     )}
                     
-                    <div className="item-badges">
-                      {item.special && (
-                        <span className="badge badge-special">Empfehlung</span>
-                      )}
-                      {item.vegetarian && (
-                        <span className="badge badge-veg">
-                          <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.7c.36-.05.73-.07 1.09-.07C13 19.23 19 14 20.5 8c0 0-3 0-3.5 0z"/>
-                          </svg>
-                        </span>
-                      )}
-                    </div>
+                  <div className="item-badges">
+                    {item.special && (
+                      <span className="badge badge-special">Empfehlung</span>
+                    )}
+                    {item.vegetarian && (
+                      <span className="badge badge-veg">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.7c.36-.05.73-.07 1.09-.07C13 19.23 19 14 20.5 8c0 0-3 0-3.5 0z"/>
+                        </svg>
+                      </span>
+                    )}
                   </div>
+                </div>
                   
                   {/* Expandable Description */}
                   {hasDescription && isExpanded && (
                     <div className="item-description-wrapper">
-                      <p className="item-description">{item.description}</p>
+                <p className="item-description">{item.description}</p>
                     </div>
                   )}
-                </div>
-                <div className="card-accent"></div>
-              </article>
+              </div>
+              <div className="card-accent"></div>
+            </article>
             )
           })}
         </div>

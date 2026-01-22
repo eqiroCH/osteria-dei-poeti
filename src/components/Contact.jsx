@@ -106,13 +106,9 @@ function Contact() {
                   <span className="contact-label">Restaurant:</span>
                   <span className="contact-value">Osteriadeipoeti391@gmail.com</span>
                 </a>
-                <a href="mailto:Gcrocicchia79@gmail.com" className="contact-item">
-                  <span className="contact-label">Giampiero:</span>
-                  <span className="contact-value">Gcrocicchia79@gmail.com</span>
-                </a>
-                <a href="mailto:m.grossi.mg@gmail.com" className="contact-item">
-                  <span className="contact-label">Matteo:</span>
-                  <span className="contact-value">m.grossi.mg@gmail.com</span>
+                <a href="tel:+41447670501" className="contact-item">
+                  <span className="contact-label">Telefon:</span>
+                  <span className="contact-value">044 767 05 01</span>
                 </a>
               </div>
             </div>
