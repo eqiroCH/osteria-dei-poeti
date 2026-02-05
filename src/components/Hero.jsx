@@ -1,4 +1,5 @@
 import './Hero.css'
+import PizzaBanner from './PizzaBanner'
 
 function Hero() {
   return (
@@ -19,6 +20,8 @@ function Hero() {
         <div className="hero-badge">
           <span>Ristorante e Pizzeria</span>
         </div>
+        
+        <PizzaBanner />
         
         <h1 className="hero-title">
           <span className="title-main">Osteria</span>

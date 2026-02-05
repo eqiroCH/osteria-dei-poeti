@@ -137,6 +137,23 @@ function Footer({ currentPage, setCurrentPage }) {
               <span className="separator"></span>
               <a href="#" onClick={(e) => handleLegalClick(e, 'datenschutz')}>Datenschutz</a>
             </div>
+            <div className="footer-credit" aria-label="Website-Credit">
+              <span>Mit</span>
+              <span className="footer-credit-heart" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 21s-7.2-4.6-9.6-8.7C.3 8.6 2.1 5.4 5.5 4.6c1.9-.4 3.8.2 5 1.6 1.2-1.4 3.1-2 5-1.6 3.4.8 5.2 4 3.1 7.7C19.2 16.4 12 21 12 21z"/>
+                </svg>
+              </span>
+              <span>gestaltet von</span>
+              <a
+                className="footer-credit-link"
+                href="https://eqiro.ch"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Eqiro
+              </a>
+            </div>
           </div>
         </div>
       </div>

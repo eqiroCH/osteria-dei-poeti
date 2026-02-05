@@ -15,6 +15,7 @@ import Footer from './components/Footer'
 function App() {
   const [bannerVisible, setBannerVisible] = useState(true)
   const [currentPage, setCurrentPage] = useState('home')
+  const showValentineBanner = bannerVisible && currentPage === 'home'
 
   const renderPage = () => {
     switch (currentPage) {
@@ -38,8 +39,8 @@ function App() {
 
   return (
     <>
-      <ValentineBanner isVisible={bannerVisible && currentPage === 'home'} onClose={() => setBannerVisible(false)} />
-      <Navbar withBanner={bannerVisible && currentPage === 'home'} currentPage={currentPage} setCurrentPage={setCurrentPage} />
+      <ValentineBanner isVisible={showValentineBanner} onClose={() => setBannerVisible(false)} />
+      <Navbar withBanner={showValentineBanner} currentPage={currentPage} setCurrentPage={setCurrentPage} />
       <main>
         {renderPage()}
       </main>
