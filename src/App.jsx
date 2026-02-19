@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import ValentineBanner from './components/ValentineBanner'
+import PizzaPromo from './components/PizzaPromo'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Menu from './components/Menu'
@@ -15,7 +15,7 @@ import Footer from './components/Footer'
 function App() {
   const [bannerVisible, setBannerVisible] = useState(true)
   const [currentPage, setCurrentPage] = useState('home')
-  const showValentineBanner = bannerVisible && currentPage === 'home'
+  const showPizzaPromo = bannerVisible && currentPage === 'home'
 
   const renderPage = () => {
     switch (currentPage) {
@@ -39,8 +39,8 @@ function App() {
 
   return (
     <>
-      <ValentineBanner isVisible={showValentineBanner} onClose={() => setBannerVisible(false)} />
-      <Navbar withBanner={showValentineBanner} currentPage={currentPage} setCurrentPage={setCurrentPage} />
+      <PizzaPromo isVisible={showPizzaPromo} onClose={() => setBannerVisible(false)} />
+      <Navbar withBanner={showPizzaPromo} currentPage={currentPage} setCurrentPage={setCurrentPage} />
       <main>
         {renderPage()}
       </main>

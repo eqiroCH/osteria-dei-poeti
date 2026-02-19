@@ -1,0 +1,513 @@
+.pizza-promo {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: slideInLeftPizza 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideInLeftPizza {
+  from {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.pizza-promo-shell {
+  position: relative;
+  width: 320px;
+  height: 360px;
+  animation: floatPizza 4s ease-in-out infinite;
+}
+
+@keyframes floatPizza {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+.pizza-promo-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: rotate(180deg);
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
+  pointer-events: none;
+}
+
+/* Hanging price tag - top right */
+.pizza-promo-price-tag {
+  position: absolute;
+  top: -0.5rem;
+  right: 0.5rem;
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: swingTag 3s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+@keyframes swingTag {
+  0%, 100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+.price-tag-string {
+  width: 2px;
+  height: 18px;
+  background: linear-gradient(180deg, rgba(139, 69, 19, 0.8), rgba(139, 69, 19, 0.4));
+  border-radius: 1px;
+}
+
+.price-tag-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(145deg, #F5E6D3 0%, #E8D4BC 50%, #D4C4A8 100%);
+  border: 2px solid #8B7355;
+  border-radius: 6px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35),
+              inset 0 1px 0 rgba(255, 255, 255, 0.6),
+              inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.price-tag-body::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background: #8B7355;
+  border-radius: 50%;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.price-amount {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #5C3317;
+  line-height: 1;
+  margin-top: 0.4rem;
+}
+
+.price-currency {
+  font-size: 0.45rem;
+  font-weight: 700;
+  color: #8B7355;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-top: -0.1rem;
+}
+
+.pizza-promo-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.75rem 1.5rem 3rem;
+  z-index: 2;
+}
+
+/* Curved "All you can eat" text along the crust */
+.pizza-promo-curved-text {
+  width: 95%;
+  height: auto;
+  margin-top: 0.9rem;
+  margin-bottom: -0.4rem;
+}
+
+.pizza-promo-curved-text text {
+  font-family: var(--font-display);
+  font-size: 2.3rem;
+  font-weight: 700;
+  font-style: italic;
+  fill: #fff;
+  letter-spacing: 0.04em;
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.95));
+}
+
+/* Curved Donnerstags */
+.pizza-promo-curved-day {
+  width: 85%;
+  height: auto;
+  margin-top: -1.1rem;
+}
+
+.pizza-promo-curved-day .day-label {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  fill: #1a1a1a;
+  filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.4));
+}
+
+
+.pizza-promo-close {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.95);
+  transition: all 0.3s ease;
+  z-index: 10;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.pizza-promo-close svg {
+  width: 12px;
+  height: 12px;
+}
+
+.pizza-promo-close:hover {
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  transform: scale(1.1) rotate(90deg);
+}
+
+/* CTA Button UNDER the pizza - overlapping more */
+.pizza-promo-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #3D2914;
+  background: linear-gradient(135deg, #D4A853 0%, #B8923F 100%);
+  padding: 0.55rem 1.2rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(212, 168, 83, 0.4), 0 2px 6px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: -2.5rem;
+  position: relative;
+  z-index: 5;
+}
+
+.pizza-promo-cta .cta-arrow {
+  width: 12px;
+  height: 12px;
+  transition: transform 0.3s ease;
+}
+
+.pizza-promo-cta:hover {
+  background: linear-gradient(135deg, #E8C478 0%, #D4A853 100%);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 24px rgba(212, 168, 83, 0.5), 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.pizza-promo-cta:hover .cta-arrow {
+  transform: translateX(3px);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .pizza-promo-shell {
+    width: 280px;
+    height: 320px;
+  }
+  
+  .pizza-promo-curved-text text {
+    font-size: 1.85rem;
+  }
+  
+  .pizza-promo-curved-day .day-label {
+    font-size: 1.2rem;
+  }
+  
+  .pizza-promo-curved-day-it {
+    margin-top: -0.9rem;
+  }
+  
+  .pizza-promo-curved-day-it .day-label-it {
+    font-size: 1.1rem;
+  }
+  
+  .pizza-promo-cta {
+    margin-top: -2.25rem;
+  }
+  
+  .price-tag-body {
+    width: 46px;
+    height: 46px;
+  }
+  
+  .price-amount {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .pizza-promo-shell {
+    width: 240px;
+    height: 275px;
+  }
+  
+  .pizza-promo-content {
+    padding: 1.25rem 1.5rem 2.5rem;
+  }
+  
+  .pizza-promo-curved-text text {
+    font-size: 1.55rem;
+  }
+  
+  .pizza-promo-curved-day .day-label {
+    font-size: 1rem;
+  }
+  
+  .pizza-promo-curved-day-it {
+    margin-top: -0.75rem;
+  }
+  
+  .pizza-promo-curved-day-it .day-label-it {
+    font-size: 0.9rem;
+  }
+  
+  .pizza-promo-cta {
+    margin-top: -2rem;
+  }
+  
+  .price-tag-string {
+    height: 14px;
+  }
+  
+  .price-tag-body {
+    width: 42px;
+    height: 42px;
+  }
+  
+  .price-amount {
+    font-size: 0.9rem;
+  }
+  
+  .price-currency {
+    font-size: 0.4rem;
+  }
+  
+  .pizza-promo-cta {
+    font-size: 0.6rem;
+    padding: 0.45rem 1rem;
+  }
+  
+  .pizza-promo-close {
+    width: 26px;
+    height: 26px;
+  }
+  
+  .pizza-promo-close svg {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 700px) {
+  .pizza-promo {
+    top: 0.5rem;
+    left: 0.5rem;
+  }
+
+  .pizza-promo-shell {
+    width: 180px;
+    height: 210px;
+  }
+  
+  .pizza-promo-content {
+    padding: 0.75rem 1rem 2rem;
+  }
+  
+  .pizza-promo-curved-text {
+    margin-top: 0.25rem;
+    margin-bottom: 0.15rem;
+  }
+  
+  .pizza-promo-curved-text text {
+    font-size: 1.15rem;
+  }
+  
+  .pizza-promo-curved-day {
+    margin-top: -0.3rem;
+  }
+  
+  .pizza-promo-curved-day .day-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+  }
+  
+  .pizza-promo-curved-day-it {
+    margin-top: -0.55rem;
+  }
+  
+  .pizza-promo-curved-day-it .day-label-it {
+    font-size: 0.65rem;
+  }
+  
+  .pizza-promo-cta {
+    margin-top: -1.5rem;
+  }
+  
+  .price-tag-string {
+    height: 10px;
+  }
+  
+  .price-tag-body {
+    width: 34px;
+    height: 34px;
+  }
+  
+  .price-tag-body::before {
+    width: 6px;
+    height: 6px;
+    top: 3px;
+  }
+  
+  .price-amount {
+    font-size: 0.75rem;
+    margin-top: 0.4rem;
+  }
+  
+  .price-currency {
+    font-size: 0.35rem;
+  }
+  
+  .pizza-promo-cta {
+    font-size: 0.5rem;
+    padding: 0.35rem 0.8rem;
+    gap: 0.25rem;
+    margin-top: -0.25rem;
+  }
+  
+  .pizza-promo-cta .cta-arrow {
+    width: 9px;
+    height: 9px;
+  }
+  
+  .pizza-promo-close {
+    top: 0.25rem;
+    left: 0.25rem;
+    width: 22px;
+    height: 22px;
+  }
+  
+  .pizza-promo-close svg {
+    width: 9px;
+    height: 9px;
+  }
+}
+
+@media (max-width: 400px) {
+  .pizza-promo-shell {
+    width: 145px;
+    height: 170px;
+  }
+  
+  .pizza-promo-content {
+    padding: 0.5rem 0.75rem 1.5rem;
+  }
+  
+  .pizza-promo-curved-text text {
+    font-size: 0.9rem;
+  }
+  
+  .pizza-promo-curved-day {
+    margin-top: -0.2rem;
+  }
+  
+  .pizza-promo-curved-day .day-label {
+    font-size: 0.58rem;
+  }
+  
+  .pizza-promo-curved-day-it {
+    margin-top: -0.4rem;
+  }
+  
+  .pizza-promo-curved-day-it .day-label-it {
+    font-size: 0.5rem;
+  }
+  
+  .pizza-promo-cta {
+    margin-top: -1rem;
+  }
+  
+  .price-tag-string {
+    height: 8px;
+  }
+  
+  .price-tag-body {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .price-tag-body::before {
+    width: 5px;
+    height: 5px;
+    top: 2px;
+  }
+  
+  .price-amount {
+    font-size: 0.6rem;
+    margin-top: 0.3rem;
+  }
+  
+  .price-currency {
+    font-size: 0.28rem;
+  }
+  
+  .pizza-promo-cta {
+    font-size: 0.4rem;
+    padding: 0.25rem 0.6rem;
+  }
+  
+  .pizza-promo-close {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .pizza-promo-close svg {
+    width: 8px;
+    height: 8px;
+  }
+}
