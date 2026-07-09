@@ -72,7 +72,7 @@ function Datenschutz({ setCurrentPage }) {
               Schweiz<br />
               <br />
               Telefon: <a href="tel:+41447670501">044 767 05 01</a><br />
-              E-Mail: <a href="mailto:Osteriadeipoeti391@gmail.com">Osteriadeipoeti391@gmail.com</a>
+              E-Mail: <a href="mailto:osteriadeipoetitaverne@gmail.com">osteriadeipoetitaverne@gmail.com</a>
             </p>
           </div>
 
