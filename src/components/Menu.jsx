@@ -1,13 +1,19 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import './Menu.css'
 
+// scale = leichtes Reinzoomen, ty = leichter Versatz nach oben (%),
+// um die dünnen dunklen Restränder oben/an den Ecken sauber wegzuschneiden.
 const pages = [
-  { src: '/menu-cover.jpg', label: 'Willkommen' },
-  { src: '/menu-1.jpg', label: 'Aperitivi · Getränke · Caffè' },
-  { src: '/menu-2.jpg', label: 'Antipasti · Insalate' },
-  { src: '/menu-3.jpg', label: 'Pasta · Nudeln' },
-  { src: '/menu-4.jpg', label: 'Pizzeria' },
+  { src: '/menu-cover.jpg', label: 'Willkommen', scale: 1.045, ty: -0.5 },
+  { src: '/menu-1.jpg', label: 'Aperitivi · Getränke · Caffè', scale: 1.06, ty: -1.6 },
+  { src: '/menu-2.jpg', label: 'Antipasti · Insalate', scale: 1.06, ty: -1.6 },
+  { src: '/menu-3.jpg', label: 'Pasta · Nudeln', scale: 1.05, ty: -0.4 },
+  { src: '/menu-4.jpg', label: 'Pizzeria', scale: 1.10, ty: -2.4 },
 ]
+
+const pageStyle = (i) => ({
+  transform: `translateY(${pages[i].ty || 0}%) scale(${pages[i].scale || 1})`,
+})
 
 function Menu() {
   const [page, setPage] = useState(0)
@@ -118,20 +124,22 @@ function Menu() {
             <div className="book-spine"></div>
 
             {/* Static base page (revealed underneath the turning leaf) */}
-            <img
-              className="book-page"
-              src={pages[baseIndex].src}
-              alt={`Speisekarte – ${pages[baseIndex].label}`}
-              onLoad={(e) => e.currentTarget.classList.add('loaded')}
-            />
+            <div className="book-page">
+              <img
+                className="page-img"
+                src={pages[baseIndex].src}
+                alt={`Speisekarte – ${pages[baseIndex].label}`}
+                style={pageStyle(baseIndex)}
+                onLoad={(e) => e.currentTarget.classList.add('loaded')}
+              />
+            </div>
 
             {/* Turning leaf */}
             {flip && (
               <div className={`leaf leaf-${flip.dir}`} onAnimationEnd={onFlipEnd}>
-                <div
-                  className="leaf-face leaf-front"
-                  style={{ backgroundImage: `url(${pages[leafIndex].src})` }}
-                />
+                <div className="leaf-face leaf-front">
+                  <img className="page-img" src={pages[leafIndex].src} alt="" style={pageStyle(leafIndex)} />
+                </div>
                 <div className="leaf-face leaf-back"></div>
                 <div className="leaf-shadow"></div>
               </div>
@@ -206,12 +214,14 @@ function Menu() {
             </svg>
           </button>
 
-          <img
-            className="menu-lightbox-img"
-            src={pages[page].src}
-            alt={`Speisekarte – ${pages[page].label}`}
-            onClick={(e) => e.stopPropagation()}
-          />
+          <div className="menu-lightbox-frame" onClick={(e) => e.stopPropagation()}>
+            <img
+              className="menu-lightbox-img"
+              src={pages[page].src}
+              alt={`Speisekarte – ${pages[page].label}`}
+              style={pageStyle(page)}
+            />
+          </div>
 
           <button
             className="menu-lightbox-nav menu-lightbox-next"

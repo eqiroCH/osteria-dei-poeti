@@ -103,17 +103,22 @@
   pointer-events: none;
 }
 
-/* The visible (base) page */
+/* The visible (base) page – clip container */
 .book-page {
   position: absolute;
   inset: 0;
+  border-radius: 4px 8px 8px 4px;
+  background: #f6f1e6;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Actual page image (slightly zoomed to crop residual dark edges) */
+.page-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 4px 8px 8px 4px;
-  background: #f6f1e6;
-  z-index: 1;
-  box-shadow: inset 14px 0 24px -14px rgba(0, 0, 0, 0.4);
+  display: block;
 }
 
 /* Turning leaf */
@@ -153,9 +158,11 @@
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   border-radius: 4px 8px 8px 4px;
-  background-size: cover;
-  background-position: center;
   background-color: #f6f1e6;
+}
+
+.leaf-front {
+  overflow: hidden;
 }
 
 .leaf-back {
@@ -323,15 +330,24 @@
   animation: fadeIn 0.25s ease;
 }
 
-.menu-lightbox-img {
-  max-width: min(94vw, 700px);
+.menu-lightbox-frame {
+  position: relative;
+  aspect-ratio: 1792 / 2400;
+  height: 90vh;
   max-height: 90vh;
-  width: auto;
-  height: auto;
-  object-fit: contain;
+  max-width: 94vw;
+  overflow: hidden;
   border-radius: 6px;
+  background: #f6f1e6;
   box-shadow: 0 25px 70px rgba(0, 0, 0, 0.7);
   animation: fadeInUp 0.35s ease-out;
+}
+
+.menu-lightbox-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .menu-lightbox-close {
