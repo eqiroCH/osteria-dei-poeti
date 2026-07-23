@@ -1,0 +1,306 @@
+.taverne {
+  padding: var(--section-padding) 0;
+  background: var(--color-bg-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.taverne-bg-pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 12% 10%, rgba(212, 168, 83, 0.06) 0%, transparent 42%),
+    radial-gradient(circle at 88% 85%, rgba(198, 123, 92, 0.06) 0%, transparent 45%);
+  pointer-events: none;
+}
+
+.taverne-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- Top: intro + hours ---- */
+.taverne-top {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: stretch;
+  max-width: 1100px;
+  margin: 0 auto 3.5rem;
+}
+
+.taverne-intro {
+  display: flex;
+  flex-direction: column;
+}
+
+.taverne-greeting {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--color-cream);
+  margin-bottom: 1rem;
+}
+
+.taverne-intro p {
+  color: var(--color-text);
+  font-size: 1.02rem;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+.taverne-signature {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--color-gold) !important;
+  font-size: 1.1rem !important;
+}
+
+.taverne-signature span {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.taverne-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+/* ---- Hours cards ---- */
+.taverne-hours {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.taverne-hours-card {
+  background: var(--color-bg-section);
+  border: 1px solid rgba(212, 168, 83, 0.18);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.75rem;
+}
+
+.taverne-hours-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(212, 168, 83, 0.15);
+}
+
+.taverne-hours-head svg {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  color: var(--color-gold);
+  margin-top: 2px;
+}
+
+.taverne-hours-head h4 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-size: 1.15rem;
+  color: var(--color-cream);
+  line-height: 1.25;
+}
+
+.taverne-hours-head h4 span {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--color-gold);
+}
+
+.taverne-hours-list {
+  list-style: none;
+}
+
+.taverne-hours-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.4rem 0;
+  font-size: 0.95rem;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.06);
+}
+
+.taverne-hours-row:last-child { border-bottom: none; }
+
+.taverne-hours-day { color: var(--color-text); }
+
+.taverne-hours-time {
+  color: var(--color-gold);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.taverne-hours-row.closed .taverne-hours-day { color: var(--color-text-muted); }
+
+.taverne-hours-row.closed .taverne-hours-time {
+  color: var(--color-text-muted);
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* ---- Gallery (masonry) ---- */
+.taverne-gallery {
+  position: relative;
+  z-index: 1;
+  column-count: 3;
+  column-gap: 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.taverne-tile {
+  position: relative;
+  margin: 0 0 1rem;
+  break-inside: avoid;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: zoom-in;
+  border: 1px solid rgba(212, 168, 83, 0.12);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-smooth);
+}
+
+.taverne-tile img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.taverne-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(212, 168, 83, 0.35);
+}
+
+.taverne-tile:hover img { transform: scale(1.04); }
+
+.taverne-tile-zoom {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(15, 13, 11, 0.55);
+  border: 1px solid rgba(212, 168, 83, 0.45);
+  color: var(--color-gold);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all var(--transition-fast);
+  backdrop-filter: blur(4px);
+}
+
+.taverne-tile:hover .taverne-tile-zoom { opacity: 1; transform: scale(1); }
+.taverne-tile-zoom svg { width: 17px; height: 17px; }
+
+/* ---- Lightbox ---- */
+.taverne-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  background: rgba(0, 0, 0, 0.94);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  cursor: zoom-out;
+  animation: fadeIn 0.25s ease;
+}
+
+.taverne-lightbox-img {
+  max-width: min(94vw, 900px);
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.7);
+  cursor: default;
+  animation: fadeInUp 0.35s ease-out;
+}
+
+.taverne-lightbox-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  transition: all var(--transition-fast);
+}
+
+.taverne-lightbox-close:hover { background: rgba(255, 255, 255, 0.18); transform: rotate(90deg); }
+.taverne-lightbox-close svg { width: 22px; height: 22px; }
+
+.taverne-lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(212, 168, 83, 0.35);
+  color: var(--color-gold);
+  transition: all var(--transition-fast);
+}
+
+.taverne-lightbox-nav:hover { background: var(--color-gold); color: var(--color-bg-dark); }
+.taverne-lightbox-prev { left: 1.25rem; }
+.taverne-lightbox-next { right: 1.25rem; }
+.taverne-lightbox-nav svg { width: 26px; height: 26px; }
+
+.taverne-lightbox-counter {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-display);
+  color: var(--color-gold);
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 860px) {
+  .taverne-top {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+  }
+  .taverne-gallery { column-count: 2; max-width: 560px; }
+}
+
+@media (max-width: 480px) {
+  .taverne-actions .btn { flex: 1; min-width: 140px; }
+  .taverne-hours-card { padding: 1.25rem 1.25rem; }
+  .taverne-lightbox-prev { left: 0.5rem; }
+  .taverne-lightbox-next { right: 0.5rem; }
+  .taverne-lightbox-nav { width: 44px; height: 44px; }
+}

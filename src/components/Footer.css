@@ -112,6 +112,30 @@
 }
 
 /* Hours */
+.footer-hours-group + .footer-hours-group {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(212, 168, 83, 0.12);
+}
+
+.footer-hours-label {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.5rem;
+}
+
+.footer-hours-note {
+  margin: 0.5rem 0 0;
+  font-size: 0.72rem;
+  font-style: italic;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
 .footer-hours .hours-list {
   list-style: none;
 }

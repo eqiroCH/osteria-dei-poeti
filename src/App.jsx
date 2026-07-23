@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Brunch from './components/Brunch'
 import Menu from './components/Menu'
+import Taverne from './components/Taverne'
 // import Events from './components/Events' // Temporär ausgeblendet - Events kommen später
 import Gallery from './components/Gallery'
 import Reviews from './components/Reviews'
@@ -27,6 +28,7 @@ function App() {
             <Hero />
             <Brunch />
             <Menu />
+            <Taverne />
             {/* <Events /> */} {/* Temporär ausgeblendet - Events kommen später */}
             <Gallery />
             <Reviews />

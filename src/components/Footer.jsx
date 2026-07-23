@@ -67,28 +67,47 @@ function Footer({ currentPage, setCurrentPage }) {
             {/* Hours */}
             <div className="footer-hours">
               <h4>Öffnungszeiten</h4>
-              <ul className="hours-list">
-                <li>
-                  <span>Dienstag - Freitag</span>
-                  <span>10:00 - 14:00</span>
-                </li>
-                <li>
-                  <span></span>
-                  <span>17:00 - 22:00</span>
-                </li>
-                <li>
-                  <span>Samstag</span>
-                  <span>17:00 - 22:00</span>
-                </li>
-                <li>
-                  <span>Sonntag</span>
-                  <span>12:00 - 21:00</span>
-                </li>
-                <li className="closed">
-                  <span>Montag</span>
-                  <span>Geschlossen</span>
-                </li>
-              </ul>
+
+              <div className="footer-hours-group">
+                <span className="footer-hours-label">Restaurant</span>
+                <ul className="hours-list">
+                  <li>
+                    <span>Di - Fr</span>
+                    <span>10:00 - 14:00</span>
+                  </li>
+                  <li>
+                    <span></span>
+                    <span>17:00 - 22:00</span>
+                  </li>
+                  <li>
+                    <span>Samstag</span>
+                    <span>17:00 - 22:00</span>
+                  </li>
+                  <li>
+                    <span>Sonntag</span>
+                    <span>12:00 - 21:00</span>
+                  </li>
+                  <li className="closed">
+                    <span>Montag</span>
+                    <span>Geschlossen</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="footer-hours-group">
+                <span className="footer-hours-label">Taverne Bar</span>
+                <ul className="hours-list">
+                  <li>
+                    <span>Do - Sa</span>
+                    <span>18:00 - 23:00</span>
+                  </li>
+                  <li className="closed">
+                    <span>Übrige Tage</span>
+                    <span>Geschlossen</span>
+                  </li>
+                </ul>
+                <p className="footer-hours-note">Ab Ende der Sommerferien auch dienstags.</p>
+              </div>
             </div>
             
             {/* Contact */}

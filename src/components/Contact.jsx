@@ -69,23 +69,41 @@ function Contact() {
               </div>
             </div>
             <div className="card-content">
-              <div className="hours-list">
-                <div className="hours-row">
-                  <span className="hours-day">Di - Fr</span>
-                  <span className="hours-time">10:00 - 14:00 / 17:00 - 22:00</span>
+              <div className="hours-group">
+                <span className="hours-group-label">Restaurant</span>
+                <div className="hours-list">
+                  <div className="hours-row">
+                    <span className="hours-day">Di - Fr</span>
+                    <span className="hours-time">10:00 - 14:00 / 17:00 - 22:00</span>
+                  </div>
+                  <div className="hours-row">
+                    <span className="hours-day">Sa</span>
+                    <span className="hours-time">17:00 - 22:00</span>
+                  </div>
+                  <div className="hours-row">
+                    <span className="hours-day">So</span>
+                    <span className="hours-time">12:00 - 21:00</span>
+                  </div>
+                  <div className="hours-row closed">
+                    <span className="hours-day">Mo</span>
+                    <span className="hours-time">Geschlossen</span>
+                  </div>
                 </div>
-                <div className="hours-row">
-                  <span className="hours-day">Sa</span>
-                  <span className="hours-time">17:00 - 22:00</span>
+              </div>
+
+              <div className="hours-group">
+                <span className="hours-group-label">Taverne Bar</span>
+                <div className="hours-list">
+                  <div className="hours-row">
+                    <span className="hours-day">Do - Sa</span>
+                    <span className="hours-time">18:00 - 23:00</span>
+                  </div>
+                  <div className="hours-row closed">
+                    <span className="hours-day">Mo, Di, Mi, So</span>
+                    <span className="hours-time">Geschlossen</span>
+                  </div>
                 </div>
-                <div className="hours-row">
-                  <span className="hours-day">So</span>
-                  <span className="hours-time">12:00 - 21:00</span>
-                </div>
-                <div className="hours-row closed">
-                  <span className="hours-day">Mo</span>
-                  <span className="hours-time">Geschlossen</span>
-                </div>
+                <p className="hours-note">Ab Ende der Sommerferien auch dienstags geöffnet.</p>
               </div>
             </div>
           </div>

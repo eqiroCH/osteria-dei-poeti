@@ -28,6 +28,7 @@ function Navbar({ currentPage, setCurrentPage }) {
   const navLinks = [
     { href: '#brunch', label: 'Brunch' },
     { href: '#menu', label: 'Speisekarte' },
+    { href: '#taverne', label: 'Taverne' },
     // { href: '#events', label: 'Events' }, // Temporär ausgeblendet
     { href: '#gallery', label: 'Galerie' },
     { href: '#reviews', label: 'Bewertungen' },

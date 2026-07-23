@@ -208,10 +208,35 @@
 
 .hours-row {
   display: grid;
-  grid-template-columns: 70px 1fr;
+  grid-template-columns: minmax(64px, auto) 1fr;
   gap: 1rem;
   align-items: baseline;
   font-size: 0.875rem;
+}
+
+/* Grouped hours (Restaurant / Taverne Bar) */
+.hours-group + .hours-group {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(212, 168, 83, 0.15);
+}
+
+.hours-group-label {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.6rem;
+}
+
+.hours-note {
+  margin: 0.6rem 0 0;
+  font-size: 0.75rem;
+  font-style: italic;
+  color: var(--color-text-muted);
+  line-height: 1.45;
 }
 
 .hours-day {
