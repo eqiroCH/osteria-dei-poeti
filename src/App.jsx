@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import Brunch from './components/Brunch'
 import Menu from './components/Menu'
 // import Events from './components/Events' // Temporär ausgeblendet - Events kommen später
 import Gallery from './components/Gallery'
@@ -24,6 +25,7 @@ function App() {
         return (
           <>
             <Hero />
+            <Brunch />
             <Menu />
             {/* <Events /> */} {/* Temporär ausgeblendet - Events kommen später */}
             <Gallery />
