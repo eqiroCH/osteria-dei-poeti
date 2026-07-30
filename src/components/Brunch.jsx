@@ -4,7 +4,7 @@ import './Brunch.css'
 const facts = [
   {
     title: 'Öffnungszeiten',
-    text: 'Bauernfrühstück 08:30 – 10:30 Uhr · Bauernbrunch 11:30 – 13:30 Uhr',
+    text: 'Bauernfrühstück 09:00 – 11:00 Uhr · Bauernbrunch 12:00 – 14:00 Uhr',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <circle cx="12" cy="12" r="9" />
@@ -14,7 +14,7 @@ const facts = [
   },
   {
     title: 'Reichhaltiges Buffet',
-    text: 'Beim Frühstück & Brunch erwartet Sie dasselbe reichhaltige Buffet mit frischen, regionalen Spezialitäten. 60 Plätze im Innenbereich, 30 auf der Terrasse.',
+    text: 'Beim Frühstück & Brunch erwartet Sie dasselbe reichhaltige Buffet mit frischen, regionalen Spezialitäten. Bis ca. 60 Plätze im Innenbereich, 30 auf der Terrasse.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M3 11h18" />
@@ -38,7 +38,7 @@ const facts = [
   },
   {
     title: 'Kinderbetreuung',
-    text: 'Für Kinder von 3 bis 10 Jahren bieten wir während des Bauernbrunchs eine liebevolle Betreuung für bis zu 2 Stunden an.',
+    text: 'Kinder von 3 bis 10 Jahren werden während des Brunchs bis zu 2 Stunden liebevoll in unserem Kinder-Spielzimmer betreut – Basteln, Zeichnen und Spielen inklusive.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -81,7 +81,7 @@ function Brunch() {
           {/* Poster – click to enlarge */}
           <figure className="brunch-image" onClick={() => setZoom(true)}>
             <img
-              src="/Bauernbrunch.jpg"
+              src="/bauernbrunchh.jpg"
               alt="Bauernfrühstück & Bauernbrunch – Osteria dei Poeti"
               loading="lazy"
               onLoad={(e) => e.currentTarget.classList.add('loaded')}
@@ -150,7 +150,7 @@ function Brunch() {
           </button>
           <img
             className="brunch-lightbox-img"
-            src="/Bauernbrunch.jpg"
+            src="/bauernbrunchh.jpg"
             alt="Bauernfrühstück & Bauernbrunch – Osteria dei Poeti"
             onClick={(e) => e.stopPropagation()}
           />
