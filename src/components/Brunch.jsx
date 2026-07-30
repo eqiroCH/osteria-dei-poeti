@@ -81,7 +81,7 @@ function Brunch() {
           {/* Poster – click to enlarge */}
           <figure className="brunch-image" onClick={() => setZoom(true)}>
             <img
-              src="/bauernbrunch.jpeg"
+              src="/Bauernbrunch.jpg"
               alt="Bauernfrühstück & Bauernbrunch – Osteria dei Poeti"
               loading="lazy"
               onLoad={(e) => e.currentTarget.classList.add('loaded')}
@@ -150,7 +150,7 @@ function Brunch() {
           </button>
           <img
             className="brunch-lightbox-img"
-            src="/bauernbrunch.jpeg"
+            src="/Bauernbrunch.jpg"
             alt="Bauernfrühstück & Bauernbrunch – Osteria dei Poeti"
             onClick={(e) => e.stopPropagation()}
           />
