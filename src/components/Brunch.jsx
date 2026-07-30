@@ -14,7 +14,7 @@ const facts = [
   },
   {
     title: 'Reichhaltiges Buffet',
-    text: 'Frische, regionale Spezialitäten aus unserer Umgebung – frei wählbar.',
+    text: 'Beim Frühstück & Brunch erwartet Sie dasselbe reichhaltige Buffet mit frischen, regionalen Spezialitäten. 60 Plätze im Innenbereich, 30 auf der Terrasse.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M3 11h18" />
@@ -38,7 +38,7 @@ const facts = [
   },
   {
     title: 'Kinderbetreuung',
-    text: 'Betreuung für Kinder von 1 bis 10 Jahren – für entspannte, gemeinsame Momente.',
+    text: 'Für Kinder von 3 bis 10 Jahren bieten wir während des Bauernbrunchs eine liebevolle Betreuung für bis zu 2 Stunden an.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -81,7 +81,7 @@ function Brunch() {
           {/* Poster – click to enlarge */}
           <figure className="brunch-image" onClick={() => setZoom(true)}>
             <img
-              src="/brunch.jpeg"
+              src="/bauernbrunch.jpeg"
               alt="Bauernfrühstück & Bauernbrunch – Osteria dei Poeti"
               loading="lazy"
               onLoad={(e) => e.currentTarget.classList.add('loaded')}
@@ -150,7 +150,7 @@ function Brunch() {
           </button>
           <img
             className="brunch-lightbox-img"
-            src="/brunch.jpeg"
+            src="/bauernbrunch.jpeg"
             alt="Bauernfrühstück & Bauernbrunch – Osteria dei Poeti"
             onClick={(e) => e.stopPropagation()}
           />
