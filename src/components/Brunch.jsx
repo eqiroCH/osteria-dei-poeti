@@ -3,8 +3,8 @@ import './Brunch.css'
 
 const facts = [
   {
-    title: 'Öffnungszeiten',
-    text: 'Bauernfrühstück 09:00 – 11:00 Uhr · Bauernbrunch 12:00 – 14:00 Uhr',
+    title: 'Zeit',
+    text: 'Jeden ersten Sonntag im Monat · 11:00 – 13:30 Uhr',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <circle cx="12" cy="12" r="9" />
@@ -14,7 +14,7 @@ const facts = [
   },
   {
     title: 'Reichhaltiges Buffet',
-    text: 'Beim Frühstück & Brunch erwartet Sie dasselbe reichhaltige Buffet mit frischen, regionalen Spezialitäten. Bis ca. 60 Plätze im Innenbereich, 30 auf der Terrasse.',
+    text: 'Frische, regionale Spezialitäten – Brot & Aufstriche, Käse, Fleisch, Rösti, Rührei und mehr. Innenbereich ca. 60 Plätze, Terrasse ca. 30 Plätze.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M3 11h18" />
@@ -28,7 +28,7 @@ const facts = [
   },
   {
     title: 'Preise',
-    text: 'Erwachsene ab 16 J. CHF 46.50 · Kinder 0–3 J. gratis · 4–10 J. CHF 1.50 pro Altersjahr · 11–15 J. CHF 29.50',
+    text: 'Erwachsene ab 16 J. CHF 46.50 · Kinder 0–3 J. gratis · 4–10 J. CHF 1.50 pro Lebensjahr · 11–15 J. CHF 29.50',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M20.59 13.41 13.42 20.58a2 2 0 0 1-2.83 0L3 13V3h10l7.59 7.59a2 2 0 0 1 0 2.82Z" />
@@ -38,7 +38,7 @@ const facts = [
   },
   {
     title: 'Kinderbetreuung',
-    text: 'Kinder von 3 bis 10 Jahren werden während des Brunchs bis zu 2 Stunden liebevoll in unserem Kinder-Spielzimmer betreut – Basteln, Zeichnen und Spielen inklusive.',
+    text: 'Kinder von 3 bis 10 Jahren betreuen wir während des Brunchs bis zu 2 Stunden kostenlos – Basteln, Zeichnen und Spielen inklusive.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -70,9 +70,9 @@ function Brunch() {
       <div className="container">
         {/* Title above */}
         <div className="brunch-header">
-          <span className="section-label">Jeden Sonntag</span>
+          <span className="section-label">Jeden 1. Sonntag im Monat</span>
           <h2 className="section-title">
-            Bauernfrühstück & <span className="gold-accent">Bauernbrunch</span>
+            Bauern<span className="gold-accent">brunch</span>
           </h2>
           <p className="section-subtitle">Regionale Genüsse in gemütlicher Atmosphäre</p>
         </div>
@@ -81,8 +81,8 @@ function Brunch() {
           {/* Poster – click to enlarge */}
           <figure className="brunch-image" onClick={() => setZoom(true)}>
             <img
-              src="/bauernbrunchh.jpg"
-              alt="Bauernfrühstück & Bauernbrunch – Osteria dei Poeti"
+              src="/bauernbrunch-flyer.jpeg"
+              alt="Bauernbrunch – Osteria dei Poeti"
               loading="lazy"
               onLoad={(e) => e.currentTarget.classList.add('loaded')}
             />
@@ -99,11 +99,11 @@ function Brunch() {
 
           {/* Title + text on the right */}
           <div className="brunch-text">
-            <h3 className="brunch-subtitle">Genießen Sie unseren Sonntagsbrunch</h3>
+            <h3 className="brunch-subtitle">Genießen Sie unseren Bauernbrunch</h3>
             <p className="brunch-lead">
-              Wir freuen uns, Sie ab <strong>Sonntag, 2. August 2026</strong> jeden Sonntag zu unserem
-              Bauernfrühstück &amp; Bauernbrunch in der Osteria dei Poeti begrüßen zu dürfen –
-              mit einem reichhaltigen Buffet voller frischer, regionaler Spezialitäten.
+              Wir laden Sie herzlich ein, <strong>jeden ersten Sonntag im Monat</strong> unseren
+              Bauernbrunch in der Osteria dei Poeti zu genießen – mit einem reichhaltigen Buffet
+              voller frischer, regionaler Spezialitäten und herzlicher Gastfreundschaft.
             </p>
 
             <ul className="brunch-facts">
@@ -119,7 +119,7 @@ function Brunch() {
             </ul>
 
             <p className="brunch-reservation">
-              Reservation erforderlich – Teilnahme nur mit Reservation.
+              Reservation empfohlen – Walk-ins sind bei freien Plätzen herzlich willkommen.
             </p>
 
             <div className="brunch-actions">
@@ -150,8 +150,8 @@ function Brunch() {
           </button>
           <img
             className="brunch-lightbox-img"
-            src="/bauernbrunchh.jpg"
-            alt="Bauernfrühstück & Bauernbrunch – Osteria dei Poeti"
+            src="/bauernbrunch-flyer.jpeg"
+            alt="Bauernbrunch – Osteria dei Poeti"
             onClick={(e) => e.stopPropagation()}
           />
         </div>
