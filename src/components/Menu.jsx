@@ -1,14 +1,16 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import './Menu.css'
 
-// scale = leichtes Reinzoomen, ty = leichter Versatz nach oben (%),
-// um die dünnen dunklen Restränder oben/an den Ecken sauber wegzuschneiden.
+// Die Seiten sind saubere Scans auf weissem Grund und werden ohne
+// Zuschnitt gezeigt (scale/ty bleiben als Feintuning-Option erhalten).
 const pages = [
-  { src: '/menu-cover.jpg', label: 'Willkommen', scale: 1.045, ty: -0.5 },
-  { src: '/menu-1.jpg', label: 'Aperitivi · Getränke · Caffè', scale: 1.06, ty: -1.6 },
-  { src: '/menu-2.jpg', label: 'Antipasti · Insalate', scale: 1.06, ty: -1.6 },
-  { src: '/menu-3.jpg', label: 'Pasta · Nudeln', scale: 1.05, ty: -0.4 },
-  { src: '/menu-4.jpg', label: 'Pizzeria', scale: 1.10, ty: -2.4 },
+  { src: '/menu-cover.jpg', label: 'Willkommen' },
+  { src: '/menu-1.jpg', label: 'Aperitivi · Getränke · Caffè' },
+  { src: '/menu-2.jpg', label: 'Antipasti · Insalate' },
+  { src: '/menu-3.jpg', label: 'Pasta · Nudeln' },
+  { src: '/menu-4.jpg', label: 'Secondi Piatti · Hauptgerichte' },
+  { src: '/menu-5.jpg', label: 'Pizzeria' },
+  { src: '/menu-6.jpg', label: 'Herkunftsdeklaration' },
 ]
 
 const pageStyle = (i) => ({
