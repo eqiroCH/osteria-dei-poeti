@@ -2,15 +2,15 @@ import { useState, useEffect, useRef } from 'react'
 import './Taverne.css'
 
 const galleryImages = [
-  { src: '/WhatsApp Bild Juli 17 2026.jpeg', alt: 'Taverne Bar – Aussenansicht bei Nacht' },
-  { src: '/WhatsApp Bild Juli 17 2026 (1).jpeg', alt: 'Gemütliche Abende in der Taverne Bar' },
-  { src: '/WhatsApp Bild Juli 17 2026 (2).jpeg', alt: 'En Ort für gueti Gschichte' },
-  { src: '/WhatsApp Bild Juli 17 2026 (3).jpeg', alt: 'Aperitif-Karte der Taverne Bar' },
-  { src: '/WhatsApp Bild Juli 17 2026 (4).jpeg', alt: 'Cocktail-Karte der Taverne Bar' },
-  { src: '/WhatsApp Bild Juli 17 2026 (5).jpeg', alt: 'Alkoholfreie Cocktails' },
-  { src: '/WhatsApp Bild Juli 17 2026 (6).jpeg', alt: 'Feine Digestifs & Shots' },
-  { src: '/WhatsApp Bild Juli 17 2026 (7).jpeg', alt: 'Ambiente in der Taverne Bar' },
-  { src: '/WhatsApp Bild Juli 17 2026 (8).jpeg', alt: 'Ambiente in der Taverne Bar' },
+  { src: '/taverne-01.jpeg', alt: 'Taverne Bar – Aussenansicht bei Nacht' },
+  { src: '/taverne-02.jpeg', alt: 'Gemütliche Abende in der Taverne Bar' },
+  { src: '/taverne-03.jpeg', alt: 'En Ort für gueti Gschichte' },
+  { src: '/taverne-04.jpeg', alt: 'Aperitif-Karte der Taverne Bar' },
+  { src: '/taverne-05.jpeg', alt: 'Cocktail-Karte der Taverne Bar' },
+  { src: '/taverne-06.jpeg', alt: 'Alkoholfreie Cocktails' },
+  { src: '/taverne-07.jpeg', alt: 'Feine Digestifs & Shots' },
+  { src: '/taverne-08.jpeg', alt: 'Ambiente in der Taverne Bar' },
+  { src: '/taverne-09.jpeg', alt: 'Ambiente in der Taverne Bar' },
 ].map((img) => ({ ...img, url: encodeURI(img.src) }))
 
 const hoursCurrent = [
@@ -96,16 +96,8 @@ function Taverne() {
               <span>Euer Team der Osteria dei Poeti – Taverne Bar</span>
             </p>
             <div className="taverne-actions">
-              <a
-                href="https://wa.me/41799380310"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-primary"
-              >
-                Reservieren
-              </a>
-              <a href="tel:+41447670501" className="btn btn-outline-gold">
-                044 767 05 01
+              <a href="tel:+41447670501" className="btn btn-primary">
+                Reservieren &middot; 044 767 05 01
               </a>
             </div>
           </div>
@@ -142,7 +134,7 @@ function Taverne() {
           </div>
         </div>
 
-        {/* Image gallery (all WhatsApp photos) */}
+        {/* Image gallery */}
         <div className="taverne-gallery">
           {galleryImages.map((img, i) => (
             <figure key={img.src} className="taverne-tile" onClick={() => open(i)}>

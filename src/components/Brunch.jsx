@@ -123,16 +123,8 @@ function Brunch() {
             </p>
 
             <div className="brunch-actions">
-              <a
-                href="https://wa.me/41799380310"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-primary"
-              >
-                Jetzt reservieren
-              </a>
-              <a href="tel:+41447670501" className="btn btn-outline-gold">
-                044 767 05 01
+              <a href="tel:+41447670501" className="btn btn-primary">
+                Jetzt reservieren &middot; 044 767 05 01
               </a>
             </div>
           </div>
