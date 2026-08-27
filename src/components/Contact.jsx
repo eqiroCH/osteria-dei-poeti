@@ -95,15 +95,14 @@ function Contact() {
                 <span className="hours-group-label">Taverne Bar</span>
                 <div className="hours-list">
                   <div className="hours-row">
-                    <span className="hours-day">Do - Sa</span>
-                    <span className="hours-time">18:00 - 23:00</span>
+                    <span className="hours-day">Di, Do - Sa</span>
+                    <span className="hours-time">19:00 - 23:00</span>
                   </div>
                   <div className="hours-row closed">
-                    <span className="hours-day">Mo, Di, Mi, So</span>
+                    <span className="hours-day">Mo, Mi, So</span>
                     <span className="hours-time">Geschlossen</span>
                   </div>
                 </div>
-                <p className="hours-note">Ab Ende der Sommerferien auch dienstags geöffnet.</p>
               </div>
             </div>
           </div>

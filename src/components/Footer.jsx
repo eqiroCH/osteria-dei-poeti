@@ -98,15 +98,14 @@ function Footer({ currentPage, setCurrentPage }) {
                 <span className="footer-hours-label">Taverne Bar</span>
                 <ul className="hours-list">
                   <li>
-                    <span>Do - Sa</span>
-                    <span>18:00 - 23:00</span>
+                    <span>Di, Do - Sa</span>
+                    <span>19:00 - 23:00</span>
                   </li>
                   <li className="closed">
                     <span>Übrige Tage</span>
                     <span>Geschlossen</span>
                   </li>
                 </ul>
-                <p className="footer-hours-note">Ab Ende der Sommerferien auch dienstags.</p>
               </div>
             </div>
             

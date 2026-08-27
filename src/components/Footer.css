@@ -128,14 +128,6 @@
   margin-bottom: 0.5rem;
 }
 
-.footer-hours-note {
-  margin: 0.5rem 0 0;
-  font-size: 0.72rem;
-  font-style: italic;
-  color: var(--color-text-muted);
-  line-height: 1.4;
-}
-
 .footer-hours .hours-list {
   list-style: none;
 }

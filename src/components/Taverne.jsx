@@ -13,21 +13,14 @@ const galleryImages = [
   { src: '/taverne-09.jpeg', alt: 'Ambiente in der Taverne Bar' },
 ].map((img) => ({ ...img, url: encodeURI(img.src) }))
 
-const hoursCurrent = [
+const barHours = [
   { day: 'Montag', time: 'Geschlossen', closed: true },
-  { day: 'Dienstag', time: 'Geschlossen', closed: true },
+  { day: 'Dienstag', time: '19:00 – 23:00' },
   { day: 'Mittwoch', time: 'Geschlossen', closed: true },
-  { day: 'Donnerstag', time: '18:00 – 23:00' },
-  { day: 'Freitag', time: '18:00 – 23:00' },
-  { day: 'Samstag', time: '18:00 – 23:00' },
+  { day: 'Donnerstag', time: '19:00 – 23:00' },
+  { day: 'Freitag', time: '19:00 – 23:00' },
+  { day: 'Samstag', time: '19:00 – 23:00' },
   { day: 'Sonntag', time: 'Geschlossen', closed: true },
-]
-
-const hoursAfter = [
-  { day: 'Dienstag', time: '18:00 – 23:00' },
-  { day: 'Donnerstag', time: '18:00 – 23:00' },
-  { day: 'Freitag', time: '18:00 – 23:00' },
-  { day: 'Samstag', time: '18:00 – 23:00' },
 ]
 
 function Taverne() {
@@ -102,7 +95,7 @@ function Taverne() {
             </div>
           </div>
 
-          {/* Opening hours – two phases */}
+          {/* Opening hours */}
           <div className="taverne-hours">
             <div className="taverne-hours-card">
               <div className="taverne-hours-head">
@@ -112,24 +105,10 @@ function Taverne() {
                 </svg>
                 <h4>
                   Öffnungszeiten
-                  <span>bis Ende der Sommerferien</span>
+                  <span>Taverne Bar</span>
                 </h4>
               </div>
-              <ul className="taverne-hours-list">{renderHours(hoursCurrent)}</ul>
-            </div>
-
-            <div className="taverne-hours-card">
-              <div className="taverne-hours-head">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M8 2v3M16 2v3M3.5 9h17" />
-                  <rect x="3" y="4.5" width="18" height="17" rx="2" />
-                </svg>
-                <h4>
-                  Ab Ende der Sommerferien
-                  <span>Taverne Bar auch dienstags geöffnet</span>
-                </h4>
-              </div>
-              <ul className="taverne-hours-list">{renderHours(hoursAfter)}</ul>
+              <ul className="taverne-hours-list">{renderHours(barHours)}</ul>
             </div>
           </div>
         </div>
