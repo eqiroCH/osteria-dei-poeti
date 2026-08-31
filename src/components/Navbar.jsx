@@ -26,9 +26,10 @@ function Navbar({ currentPage, setCurrentPage }) {
   }, [isMobileMenuOpen])
 
   const navLinks = [
-    { href: '#brunch', label: 'Brunch' },
+    { href: '#domenica', label: 'La Domenica' },
     { href: '#menu', label: 'Speisekarte' },
     { href: '#taverne', label: 'Taverne' },
+    { href: '#weihnachtsfeier', label: 'Weihnachtsfeier' },
     // { href: '#events', label: 'Events' }, // Temporär ausgeblendet
     { href: '#gallery', label: 'Galerie' },
     { href: '#reviews', label: 'Bewertungen' },
