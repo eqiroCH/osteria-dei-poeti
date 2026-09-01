@@ -151,10 +151,92 @@
   line-height: 1.55;
 }
 
+/* Banner from the flyer */
+.xmas-banner {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 3rem auto 0;
+  padding: 0.9rem 1.5rem;
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: clamp(0.78rem, 1.6vw, 0.92rem);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-bg-dark);
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold-dark));
+}
+
+/* Highlights */
+.xmas-highlights {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  max-width: 1100px;
+  margin: 1.25rem auto 0;
+}
+
+.xmas-highlight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.75rem 1.25rem;
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-card);
+  border: 1px solid rgba(212, 168, 83, 0.22);
+  transition: transform var(--transition-smooth), border-color var(--transition-smooth);
+}
+
+.xmas-highlight:hover {
+  transform: translateY(-4px);
+  border-color: rgba(212, 168, 83, 0.5);
+}
+
+.xmas-highlight-icon {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background: rgba(212, 168, 83, 0.1);
+  border: 1px solid rgba(212, 168, 83, 0.25);
+  color: var(--color-gold);
+  margin-bottom: 1rem;
+}
+
+.xmas-highlight-icon svg { width: 23px; height: 23px; }
+
+.xmas-highlight-title {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  color: var(--color-cream);
+  margin-bottom: 0.5rem;
+}
+
+.xmas-highlight-text {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* Footer */
+.xmas-footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-top: 3rem;
+}
+
 .xmas-reservation {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 1.05rem;
+  font-size: clamp(1.15rem, 2.5vw, 1.5rem);
   color: var(--color-gold);
   margin-bottom: 1.75rem;
 }
@@ -162,6 +244,7 @@
 .xmas-actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
 }
 
@@ -221,6 +304,13 @@
   .xmas-image {
     max-width: 420px;
     margin: 0 auto;
+  }
+  .xmas-banner,
+  .xmas-highlights {
+    max-width: 560px;
+  }
+  .xmas-highlights {
+    grid-template-columns: 1fr;
   }
 }
 

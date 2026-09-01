@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import Domenica from './components/Domenica'
+// import Domenica from './components/Domenica' // Temporär ausgeblendet - durch Weihnachtsfeier ersetzt
 import Menu from './components/Menu'
 import Taverne from './components/Taverne'
 import Weihnachtsfeier from './components/Weihnachtsfeier'
@@ -27,10 +27,10 @@ function App() {
         return (
           <>
             <Hero />
-            <Domenica />
+            <Weihnachtsfeier />
+            {/* <Domenica /> */} {/* Temporär ausgeblendet - durch Weihnachtsfeier ersetzt */}
             <Menu />
             <Taverne />
-            <Weihnachtsfeier />
             {/* <Events /> */} {/* Temporär ausgeblendet - Events kommen später */}
             <Gallery />
             <Reviews />

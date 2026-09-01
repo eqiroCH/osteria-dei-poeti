@@ -3,7 +3,7 @@ import './Weihnachtsfeier.css'
 
 const facts = [
   {
-    title: 'Anstossen in unserer Taverne Bar',
+    title: 'Anstossen in unserer Taverne & Bar',
     text: 'Starten Sie Ihre Weihnachtsfeier bei einem feinen Apéro, köstlichen Drinks oder einem guten Glas Wein. Entspannt ankommen, lachen und geniessen.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -16,7 +16,7 @@ const facts = [
   },
   {
     title: 'Italien geniessen',
-    text: 'Italienische Spezialitäten – als Menü oder als reichhaltiges Buffet. Frisch, authentisch und ganz nach Ihren Wünschen zubereitet.',
+    text: 'Freuen Sie sich auf italienische Spezialitäten – als Menü oder als reichhaltiges Buffet. Frisch, authentisch und mit viel Liebe zubereitet. Ganz nach Ihren Wünschen.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M3 11h18" />
@@ -29,8 +29,23 @@ const facts = [
     ),
   },
   {
-    title: 'Bis zu 60 Personen in zwei Sälen',
-    text: 'Ob kleines Team oder grosse Firma – wir bieten Platz für bis zu 60 Personen in zwei liebevoll eingerichteten Sälen.',
+    title: 'Gemeinsam feiern',
+    text: 'Ob kleines Team oder grosse Firma – bei uns feiern Sie in besonderem Ambiente. Wir kümmern uns um alles, Sie geniessen den Abend mit Ihrem Team.',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+      </svg>
+    ),
+  },
+]
+
+const highlights = [
+  {
+    title: 'Für jedes Team',
+    text: 'Für jedes Team – vom kleinen Kreis bis zur grossen Feier!',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -41,11 +56,25 @@ const facts = [
     ),
   },
   {
+    title: 'Bis zu 60 Personen in zwei Sälen',
+    text: 'Wir bieten Platz für bis zu 60 Personen – in zwei liebevoll eingerichteten Sälen.',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <rect x="3" y="3" width="8" height="18" rx="1" />
+        <rect x="13" y="3" width="8" height="18" rx="1" />
+        <path d="M9 12h.01M15 12h.01" />
+      </svg>
+    ),
+  },
+  {
     title: 'Rundum sorglos',
     text: 'Auf Wunsch organisieren wir Apéro, Menü, Wein, Begleitung und Dekoration – Sie geniessen, wir kümmern uns um den Rest.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78Z" />
+        <path d="M3 18h18" />
+        <path d="M4 18a8 8 0 0 1 16 0" />
+        <path d="M12 6V4" />
+        <circle cx="12" cy="3" r="1" />
       </svg>
     ),
   },
@@ -100,11 +129,11 @@ function Weihnachtsfeier() {
 
           {/* Title + text on the right */}
           <div className="xmas-text">
-            <h3 className="xmas-subtitle">Feiern, geniessen, zusammen</h3>
+            <h3 className="xmas-subtitle">Feiern · Geniessen · Zusammen</h3>
             <p className="xmas-lead">
               Feiern Sie Ihre <strong>Firmenweihnachtsfeier</strong> in der Osteria dei Poeti –
-              vom Apéro in der Taverne Bar bis zum festlichen Menü in unseren Sälen. Sagen Sie
-              uns, was Sie sich wünschen, wir machen den Rest.
+              vom Apéro in der Taverne &amp; Bar bis zum festlichen Menü in unseren Sälen. Sagen
+              Sie uns, was Sie sich wünschen, wir machen den Rest.
             </p>
 
             <ul className="xmas-facts">
@@ -118,19 +147,37 @@ function Weihnachtsfeier() {
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
 
-            <p className="xmas-reservation">
-              Ankommen. Anstossen. Italien geniessen. Gemeinsam feiern.
-            </p>
+        {/* Banner from the flyer */}
+        <p className="xmas-banner">
+          Buffets, Menüs &amp; viele italienische Köstlichkeiten
+        </p>
 
-            <div className="xmas-actions">
-              <a href="tel:+41447670501" className="btn btn-primary">
-                Anfragen &middot; 044 767 05 01
-              </a>
-              <a href="mailto:osteriadeipoetitaverne@gmail.com" className="btn btn-secondary">
-                E-Mail schreiben
-              </a>
+        {/* Highlights */}
+        <div className="xmas-highlights">
+          {highlights.map((h) => (
+            <div key={h.title} className="xmas-highlight">
+              <span className="xmas-highlight-icon">{h.icon}</span>
+              <span className="xmas-highlight-title">{h.title}</span>
+              <span className="xmas-highlight-text">{h.text}</span>
             </div>
+          ))}
+        </div>
+
+        <div className="xmas-footer">
+          <p className="xmas-reservation">
+            Ankommen. Anstossen. Italien geniessen. Gemeinsam feiern.
+          </p>
+
+          <div className="xmas-actions">
+            <a href="tel:+41447670501" className="btn btn-primary">
+              Anfragen &middot; 044 767 05 01
+            </a>
+            <a href="mailto:osteriadeipoetitaverne@gmail.com" className="btn btn-secondary">
+              E-Mail schreiben
+            </a>
           </div>
         </div>
       </div>
