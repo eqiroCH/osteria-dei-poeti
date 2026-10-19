@@ -5,11 +5,11 @@ import './Menu.css'
 // Zuschnitt gezeigt (scale/ty bleiben als Feintuning-Option erhalten).
 const pages = [
   { src: '/speisekarte-1.jpg', label: 'Willkommen' },
-  { src: '/speisekarte-2.jpg', label: 'Antipasti · Vorspeisen' },
-  { src: '/speisekarte-3.jpg', label: 'Insalata · Salat' },
-  { src: '/speisekarte-4.jpg', label: 'Pasta · Nudeln' },
-  { src: '/speisekarte-5.jpg', label: 'Secondi Piatti · Hauptspeisen' },
-  { src: '/speisekarte-6.jpg', label: 'Pizza' },
+  { src: '/speisekarte-antipasti.jpg', label: 'Antipasti · Vorspeisen' },
+  { src: '/speisekarte-insalata.jpg', label: 'Insalata · Salat' },
+  { src: '/speisekarte-pasta.jpg', label: 'Pasta · Nudeln' },
+  { src: '/speisekarte-secondi.jpg', label: 'Secondi Piatti · Hauptspeisen' },
+  { src: '/speisekarte-pizza.jpg', label: 'Pizzeria' },
   { src: '/speisekarte-7.jpg', label: 'Aperitivi · Getränke · Caffè' },
   { src: '/speisekarte-8.jpg', label: 'Allergene & Herkunft' },
 ]
