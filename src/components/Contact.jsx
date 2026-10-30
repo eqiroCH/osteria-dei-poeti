@@ -119,9 +119,9 @@ function Contact() {
             </div>
             <div className="card-content">
               <div className="contact-list">
-                <a href="mailto:osteriadeipoetitaverne@gmail.com" className="contact-item">
+                <a href="mailto:osteriadeipoetimaschwanden@gmail.com" className="contact-item">
                   <span className="contact-label">Restaurant:</span>
-                  <span className="contact-value">osteriadeipoetitaverne@gmail.com</span>
+                  <span className="contact-value">osteriadeipoetimaschwanden@gmail.com</span>
                 </a>
                 <a href="tel:+41447670501" className="contact-item">
                   <span className="contact-label">Telefon:</span>
