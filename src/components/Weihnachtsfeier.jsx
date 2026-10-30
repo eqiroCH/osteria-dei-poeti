@@ -175,7 +175,7 @@ function Weihnachtsfeier() {
             <a href="tel:+41447670501" className="btn btn-primary">
               Anfragen &middot; 044 767 05 01
             </a>
-            <a href="mailto:osteriadeipoetitaverne@gmail.com" className="btn btn-secondary">
+            <a href="mailto:osteriadeipoetimaschwanden@gmail.com" className="btn btn-secondary">
               E-Mail schreiben
             </a>
           </div>
